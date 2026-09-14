@@ -24,10 +24,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-euiccgoogle.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-euiccgoogle.xml
 
-# init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/init.myron.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.myron.rc
-
 # Properties
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/properties/odm_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_CN.prop \

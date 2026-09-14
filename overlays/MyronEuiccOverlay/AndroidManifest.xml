@@ -11,6 +11,6 @@
         android:isStatic="true"
         android:priority="801"
         android:targetPackage="android"
-        android:requiredSystemPropertyName="ro.product.model"
-        android:requiredSystemPropertyValue="+(25102PCBEG)" />
+        android:requiredSystemPropertyName="ro.boot.hwc"
+        android:requiredSystemPropertyValue="GL" />
 </manifest>
