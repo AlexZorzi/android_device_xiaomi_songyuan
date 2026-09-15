@@ -9,7 +9,7 @@
 $(call inherit-product, device/xiaomi/sm8850-common/common.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/myron/myron-vendor.mk)
+$(call inherit-product, vendor/xiaomi/songyuan/songyuan-vendor.mk)
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -35,8 +35,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayMyron \
-    FrameworksResMyron \
-    MyronEuiccOverlay \
-    SettingsOverlayMyron \
-    SystemUIResMyron
+    ApertureOverlaySongyuan \
+    FrameworksResSongyuan \
+    SongyuanEuiccOverlay \
+    SettingsOverlaySongyuan \
+    SystemUIResSongyuan

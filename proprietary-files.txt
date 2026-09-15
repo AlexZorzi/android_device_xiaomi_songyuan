@@ -1,5 +1,6 @@
-## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Redmi K90 Pro Max (OS3.0.306.0.WPMCNXM). 
+## TODO: carried over from myron (Redmi K90 Pro Max). Regenerate against a
+## songyuan dump with ./extract-files.py before building — the camera sensor,
+## tuning and touch firmware entries below are myron's and will not resolve.
 
 # ACDBs
 odm/etc/acdbdata/Mi/Ext_AiOff_fixed.eai
@@ -24,7 +25,6 @@ odm/etc/acdbdata/Mi/model9414_eai_int8_8850.eai
 odm/etc/audio/mis_gameop_configs.bin
 odm/etc/audio/mis_head_spatial.bin
 odm/etc/audio/mis_head.bin
-odm/etc/audio/mis_powerop_configs.bin
 odm/etc/audio/mis_spk_spatial.bin
 odm/etc/audio/mis_spk.bin
 odm/etc/audio/misound_karaoke_res.bin
@@ -34,7 +34,6 @@ odm/lib/rfsa/adsp/libaisupernight_ellc_cdsp_skel.so
 odm/lib/rfsa/adsp/libmialgo_ai_process_cdsp_skel.so
 odm/lib/rfsa/adsp/libmialgo_ai_process_ops_cdsp_skel.so
 odm/lib/rfsa/adsp/libmialgo_hdsr_sr_cdsp_skel.so
-odm/lib/rfsa/adsp/libmialgo_snsc_cdsp_skel.so
 odm/lib/rfsa/adsp/libmialgo_supernight_capture_cdsp_skel.so
 odm/lib/rfsa/adsp/libmialgo_tracker_cdsp_skel.so
 odm/lib64/bm6a81v04s14n00.sm8845.bin
@@ -155,8 +154,6 @@ vendor/lib64/rfs/dsp/libffthelper_skel.so
 vendor/lib64/rfs/dsp/libhdr_skel.so
 vendor/lib64/rfs/dsp/libHexlpQnnHtp.so
 vendor/lib64/rfs/dsp/libHexlpQnnSystem.so
-vendor/lib64/rfs/dsp/libmobilenet_dsp_frc_networks.so
-vendor/lib64/rfs/dsp/libmobilenet_dsp_frc.so
 vendor/lib64/rfs/dsp/libnsp_ipc_cdsp_skel.so
 vendor/lib64/rfs/dsp/libnspextensioncopyprovider.so
 vendor/lib64/rfs/dsp/libnspextensionfrcprovider.so
@@ -198,8 +195,6 @@ odm/etc/camera/af_detect_1st.dlc
 odm/etc/camera/af_detect_2nd.dlc
 odm/etc/camera/af_detect_3rd.dlc
 odm/etc/camera/af_saliency.dlc
-odm/etc/camera/af_track_backbone.dlc
-odm/etc/camera/af_track_head.dlc
 odm/etc/camera/aiassistae_Albedo.json
 odm/etc/camera/aideban_params.json
 odm/etc/camera/AIGesture/buling_1s.png
@@ -230,7 +225,6 @@ odm/etc/camera/AIGesture/thumbup_3s.png
 odm/etc/camera/ainr_minn.bin
 odm/etc/camera/ainr_minn.json
 odm/etc/camera/ainr_v1_params.json
-odm/etc/camera/ainr_v1.bin
 odm/etc/camera/aisn_params.json
 odm/etc/camera/aisn.bin
 odm/etc/camera/aisp_correct_image.json
@@ -261,12 +255,6 @@ odm/etc/camera/camerascene.json
 odm/etc/camera/camxoverridesettings.txt
 odm/etc/camera/cls_scene.minn
 odm/etc/camera/colorfix.minn
-odm/etc/camera/com.xiaomi.dcal.w_01.t4_03.golden
-odm/etc/camera/com.xiaomi.dcal.w_01.t4_10.golden
-odm/etc/camera/com.xiaomi.dcal.w_01.u_10.golden
-odm/etc/camera/com.xiaomi.dcal.w_10.t4_03.golden
-odm/etc/camera/com.xiaomi.dcal.w_10.t4_10.golden
-odm/etc/camera/com.xiaomi.dcal.w_10.u_10.golden
 odm/etc/camera/common_camdfx_config.json
 odm/etc/camera/det_face.minn
 odm/etc/camera/det_landmark.minn
@@ -286,7 +274,6 @@ odm/etc/camera/ellc.bin
 odm/etc/camera/facefocus_models/Vega_Attribute.model
 odm/etc/camera/facefocus_models/Vega_Detect_Sculpture.model
 odm/etc/camera/facefocus_models/Vega_Detect.model
-odm/etc/camera/facesr_ff_v6.0.42_qcom8850_rQsQ_hd@nb_hd09210408LHNoiseQnn2.33.0Q35.3_20251015.model
 odm/etc/camera/fusion_mecp.bin
 odm/etc/camera/fusion_models/fusion_cache
 odm/etc/camera/fusion_models/fusion_model
@@ -303,18 +290,7 @@ odm/etc/camera/gan_text.minn
 odm/etc/camera/harbo_o1_sr_tone.minn
 odm/etc/camera/harbo_se_config.json
 odm/etc/camera/harbo_se_opencl.bin
-odm/etc/camera/harbo_se_p3_tele_fullsize_quad_4frame_concert.minn
-odm/etc/camera/harbo_se_p3_tele_fullsize_quad_4frame.minn
-odm/etc/camera/harbo_se_p3_tele_isz_quad_8frame_concert.minn
-odm/etc/camera/harbo_se_p3_tele_isz_quad_8frame.minn
-odm/etc/camera/harbo_se_p3_tele_quad_1frame.minn
-odm/etc/camera/harbo_se_p3_wide_quad_1frame.minn
-odm/etc/camera/harbo_se_p3_wide_quad_4frame.minn
 odm/etc/camera/harbo_sr_config.json
-odm/etc/camera/harbo_sr_p11u_stele_binning_2x_8frame.minn
-odm/etc/camera/harbo_sr_p11u_stele_fullsizequad_4frame.minn
-odm/etc/camera/harbo_sr_p11u_stele_iszquad_8frame.minn
-odm/etc/camera/harbo_sr_p11u_wide_fullsizequad_4frame.minn
 odm/etc/camera/hdsr_minn.bin
 odm/etc/camera/hdsr_minn.json
 odm/etc/camera/headseg_1024_trimap.minn
@@ -341,7 +317,6 @@ odm/etc/camera/mage2_supernight_capture_opencl.bin
 odm/etc/camera/mdbokeh_ngt.bin
 odm/etc/camera/merge_aitone_coeff.minn
 odm/etc/camera/merge_aitone_guide.minn
-odm/etc/camera/merge_clartiy.minn
 odm/etc/camera/merge_concert_aitone_coeff.minn
 odm/etc/camera/merge_concert_aitone_guide.minn
 odm/etc/camera/merge_deflare.minn
@@ -351,23 +326,15 @@ odm/etc/camera/merge_fire_aitone_coeff.minn
 odm/etc/camera/merge_fire_aitone_guide.minn
 odm/etc/camera/merge_lmkportrait_back.minn
 odm/etc/camera/mi_tuning/default.bin
-odm/etc/camera/mi_tuning/myron_aac_ov50m_ultra_i.bin
-odm/etc/camera/mi_tuning/myron_aac_ovx9500_wide_ii.bin
-odm/etc/camera/mi_tuning/myron_aac_s5kjn5_tele_ii.bin
-odm/etc/camera/mi_tuning/myron_ofilm_ov32d40_front_i.bin
-odm/etc/camera/mi_tuning/myron_semco_s5kjn5_tele_i.bin
-odm/etc/camera/mi_tuning/myron_sunny_ovx9500_wide_i.bin
 odm/etc/camera/miai_hdsr_raw_classic_config.json
 odm/etc/camera/miai_hdsr_raw_vivid_config.json
 odm/etc/camera/mialgo_aialign_opencl.bin
 odm/etc/camera/mialgo_ainr_ll_cl.bin
-odm/etc/camera/mialgo_aisn_common_algos_opencl.bin
 odm/etc/camera/mialgo_anchor_selection_cl.bin
 odm/etc/camera/mialgo_capture_hdsr_sr_cl.cache
 odm/etc/camera/mialgo_computation_optics_cl.bin
 odm/etc/camera/mialgo_depth_cl.bin
 odm/etc/camera/mialgo_hdsr_config.json
-odm/etc/camera/mialgo_lqsc_cl.bin
 odm/etc/camera/mialgo_rawhdsr_sr_cl.bin
 odm/etc/camera/mialgo_sdsr_cl.bin
 odm/etc/camera/mialgo_sn_config.json
@@ -407,14 +374,9 @@ odm/etc/camera/model_ai_pp2pd4.minn
 odm/etc/camera/model_ai_pp2pd5.minn
 odm/etc/camera/model_ai_pp2pd6.minn
 odm/etc/camera/model_aiaealbedo.minn
-odm/etc/camera/model_header.json
 odm/etc/camera/motioncap_auto_tuning.xml
-odm/etc/camera/motioncap_concert_auto_tuning.xml
-odm/etc/camera/motioncap_concert_enhance_tuning.xml
 odm/etc/camera/motioncap_enhance_tuning.xml
-odm/etc/camera/motioncap_fireworks_auto_tuning.xml
-odm/etc/camera/motioncap_fireworks_enhance_tuning.xml
-odm/etc/camera/myron/bokehsettings.json
+odm/etc/camera/songyuan/bokehsettings.json
 odm/etc/camera/nature_segmentation/lm_nature_segmentation_model
 odm/etc/camera/nature_segmentation/lm_nature_segmentation_pipeline
 odm/etc/camera/NGT_compressed.bin
@@ -423,10 +385,7 @@ odm/etc/camera/obj_det_cache
 odm/etc/camera/obj_det_policy
 odm/etc/camera/ocr_aio
 odm/etc/camera/overridejpegconfig.json
-odm/etc/camera/P11U_v0606_wide.bin
 odm/etc/camera/p2_config_2.1.0_0.json
-odm/etc/camera/para_ini_cal_t4w.bin
-odm/etc/camera/para_ini_cal_wu.bin
 odm/etc/camera/previewbokeh_config.bin
 odm/etc/camera/scene_cls_model/asd_scene_model_model
 odm/etc/camera/scene_cls_model/asd_scene_model_pipeline
@@ -450,15 +409,11 @@ odm/etc/camera/sensor_config.json
 odm/etc/camera/sg_depes_cache
 odm/etc/camera/sg_depes_model
 odm/etc/camera/sg_depes_policy
-odm/etc/camera/sg_depth_cache
 odm/etc/camera/sg_depth_model
-odm/etc/camera/sg_depth_policy
 odm/etc/camera/sg_head_cache
 odm/etc/camera/sg_head_model
 odm/etc/camera/sg_head_policy
-odm/etc/camera/sg_seg_cache
 odm/etc/camera/sg_seg_model
-odm/etc/camera/sg_seg_policy
 odm/etc/camera/singlebokeh_mecp.bin
 odm/etc/camera/sky_segmentation/lm_sky_segmentation_model
 odm/etc/camera/sky_segmentation/lm_sky_segmentation_pipeline
@@ -487,19 +442,11 @@ odm/etc/camera/snsc_minn.bin
 odm/etc/camera/snsc_minn.json
 odm/etc/camera/snsc_motiontuning.xml
 odm/etc/camera/snsc_noface_motiontuning.xml
-odm/etc/camera/SNSC_OV50Q_LBMF_Debanding.minn
 odm/etc/camera/snsc_params.json
-odm/etc/camera/SNSC_SC590XS_LBMF_Debanding.minn
 odm/etc/camera/srdehaze_params.json
 odm/etc/camera/style/arcbeauty_param_config.json
 odm/etc/camera/style/beauty_style_sample.hdcg
-odm/etc/camera/supervq_model
-odm/etc/camera/svq_cache
-odm/etc/camera/svq_config.json
-odm/etc/camera/t_3x.bin
-odm/etc/camera/t_5x.bin
 odm/etc/camera/thermalConfig.json
-odm/etc/camera/uw.bin
 odm/etc/camera/videofilter/102_SummerDay.png
 odm/etc/camera/videofilter/103_Fantasy.png
 odm/etc/camera/videofilter/104_Meet.png
@@ -569,7 +516,6 @@ odm/etc/camera/videofilter/172_LeicaEternal.png
 odm/etc/camera/videofilter/173_LeicaBrass.png
 odm/etc/camera/videofilter/174_LeicaTeal.png
 odm/etc/camera/videofilter/175_LeicaIModelA.png
-odm/etc/camera/w.bin
 odm/etc/camera/xiaomi/20220921.icc
 odm/etc/camera/xiaomi/adaptersettings.json
 odm/etc/camera/xiaomi/aispsensormodesettings.json
@@ -753,8 +699,6 @@ odm/etc/camera/xmi_slmt_4x_1080p.dlc
 odm/etc/camera/xmi_slmt_4x_720p.dlc
 
 # Camera (odm)
-odm/lib64/camera/aon_front_i_1.pb;SYMLINK=vendor/lib64/camera/aon_front_i_1.pb
-odm/lib64/camera/aon_rear_i_2.pb;SYMLINK=vendor/lib64/camera/aon_rear_i_2.pb
 odm/lib64/camera/libchxlogicalcameratable.so
 odm/lib64/com.xiaomi.capability.bokeh.adapter.so
 odm/lib64/com.xiaomi.capability.bokeh.so
@@ -764,13 +708,11 @@ odm/lib64/gaussianfiltcoeff.bin
 odm/lib64/libabnormal_img_dectect.so
 odm/lib64/libaiassistae.so
 odm/lib64/libaispalgoprocessor.so
-odm/lib64/libanc_dc_plugin_xiaomi_v3.so
 odm/lib64/libanc_edof_checker.so
 odm/lib64/libanc_edof.so
 odm/lib64/libanc_objdetection.so
 odm/lib64/libanc_single_bokeh.so
 odm/lib64/libanc_supermoon.so
-odm/lib64/libanc_supervq.so
 odm/lib64/libAncHumanPreviewBokeh.so
 odm/lib64/libarc_aisp.so
 odm/lib64/libarc.ion.so
@@ -782,9 +724,7 @@ odm/lib64/libarcsoft_raw_sr.so
 odm/lib64/libarcsoft_scbokeh_video.so
 odm/lib64/libarcsoft_starshotstacking_handheld.so
 odm/lib64/libarcsoft_stellartrack_raw.so
-odm/lib64/libarcsoft_turbo_fusion_mfnr.so
 odm/lib64/libarcsoft_turbo_fusion_raw_portrait_super_night.so
-odm/lib64/libarcsoft_turbo_fusion_raw_super_night.so
 odm/lib64/libarcsoft_turbo_hdr_grf.so
 odm/lib64/libarcsoft_turbo_hdr_raw_portrait.so
 odm/lib64/libarcsoft_turbo_hdr_raw.so
@@ -792,8 +732,6 @@ odm/lib64/libDISAlgos.so
 odm/lib64/libdlrmsc.so
 odm/lib64/libdsac_yuv_resize.so
 odm/lib64/libecdpreproc.so
-odm/lib64/libfcell.so
-odm/lib64/libhandgesture.arcsoft.so
 odm/lib64/libharbo_se.so
 odm/lib64/libharbo.so
 odm/lib64/libHISCppAlgos.so
@@ -801,15 +739,12 @@ odm/lib64/libIMTCppAlgos.so
 odm/lib64/libLMSceneSeg.so
 odm/lib64/libmage.so
 odm/lib64/libmetadataHelper.so
-odm/lib64/libmi_aialign_raw.so
-odm/lib64/libmi_authsecretd.so
 odm/lib64/libmi_computationalOptics_def.so
 odm/lib64/libmi_supernight_raw.so
 odm/lib64/libmiaio_det_sceneseg.so
 odm/lib64/libmialgo_ainr_jdd.so
 odm/lib64/libmialgo_ainr_ll.so
 odm/lib64/libmialgo_aio_seg.so
-odm/lib64/libmialgo_aisn_common.so
 odm/lib64/libmialgo_aisp.so
 odm/lib64/libmialgo_anchor_selection.so
 odm/lib64/libmialgo_cls.so
@@ -841,14 +776,12 @@ odm/lib64/libmituning_datacenter.so
 odm/lib64/libmituning_utils.so
 odm/lib64/libMiVideoFilter.so
 odm/lib64/libmiZA.so
-odm/lib64/libmorpho_Depurple.so
 odm/lib64/libocr_api.so
 odm/lib64/libportrait_repair_qnn.so
 odm/lib64/libremosaic_wrapper.so
 odm/lib64/libremosaiclib.so
 odm/lib64/librfs_warp.so
 odm/lib64/libsupermoon.so
-odm/lib64/libvega_common_ecd.so;FIX_SONAME
 odm/lib64/libvega_common.so
 odm/lib64/libwa_opticalzoom_fusion.so
 odm/lib64/libwa_widelens_undistort.so
@@ -859,7 +792,6 @@ odm/lib64/outconvfiltcoeffqpd4x4.bin
 odm/lib64/rsmc_fw.bin
 
 # Camera Components
-odm/lib64/camera/components/com.mi.node.videonight.so
 odm/lib64/camera/components/com.qti.node.ldc.so
 odm/lib64/camera/components/com.xiaomi.node.alpha_blending.so
 odm/lib64/camera/components/com.xiaomi.stats.aec.so
@@ -893,7 +825,6 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.arcbeautydeformation.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.arcskinbeautifier.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.arcskinbeautifierpreview.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.arcsoftvideobokeh.so
-odm/lib64/camera/plugins/com.xiaomi.plugin.depurple.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.dsac.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.ecdsnapshotdet.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.edof.so
@@ -914,8 +845,6 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.movieeffect.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.pack2unpack.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.pixman.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.portraitrepair.so
-odm/lib64/camera/plugins/com.xiaomi.plugin.psmetasplit.so
-odm/lib64/camera/plugins/com.xiaomi.plugin.remosaic.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.singlebokehpreview.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.spc.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.supermoon.so
@@ -971,35 +900,7 @@ odm/lib64/camera/zsl/com.xiaomi.zsl.single.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.sr.so
 
 # Camera module
-odm/lib64/camera/com.qti.actuator.myron_aac_ovx9500_ak7316_wide_ii_actuator.so
-odm/lib64/camera/com.qti.actuator.myron_aac_s5kjn5_ak7316_tele_ii_actuator.so
-odm/lib64/camera/com.qti.actuator.myron_semco_s5kjn5_ak7316_tele_i_actuator.so
-odm/lib64/camera/com.qti.actuator.myron_sunny_ovx9500_ak7316_wide_i_actuator.so
-odm/lib64/camera/com.qti.eeprom.myron_aac_ov50m_p24u64b_ultra_i_eeprom.so
-odm/lib64/camera/com.qti.eeprom.myron_aac_ovx9500_p24u128b_wide_ii_eeprom.so
-odm/lib64/camera/com.qti.eeprom.myron_aac_s5kjn5_p24u128b_tele_ii_eeprom.so
-odm/lib64/camera/com.qti.eeprom.myron_ofilm_ov32d40_p24u64b_front_i_eeprom.so
-odm/lib64/camera/com.qti.eeprom.myron_semco_s5kjn5_p24u128b_tele_i_eeprom.so
-odm/lib64/camera/com.qti.eeprom.myron_sunny_ovx9500_p24u128b_wide_i_eeprom.so
-odm/lib64/camera/com.qti.sensor.myron_aac_ov50m_ultra_i.so
-odm/lib64/camera/com.qti.sensor.myron_aac_ovx9500_wide_ii.so
-odm/lib64/camera/com.qti.sensor.myron_aac_s5kjn5_tele_ii.so
-odm/lib64/camera/com.qti.sensor.myron_ofilm_ov32d40_front_i.so
-odm/lib64/camera/com.qti.sensor.myron_semco_s5kjn5_tele_i.so
-odm/lib64/camera/com.qti.sensor.myron_sunny_ovx9500_wide_i.so
-odm/lib64/camera/com.qti.sensormodule.myron_aac_ov50m_ultra_i.bin
-odm/lib64/camera/com.qti.sensormodule.myron_aac_ovx9500_wide_ii.bin
-odm/lib64/camera/com.qti.sensormodule.myron_aac_s5kjn5_tele_ii.bin
-odm/lib64/camera/com.qti.sensormodule.myron_ofilm_ov32d40_front_i.bin
-odm/lib64/camera/com.qti.sensormodule.myron_semco_s5kjn5_tele_i.bin
-odm/lib64/camera/com.qti.sensormodule.myron_sunny_ovx9500_wide_i.bin
 odm/lib64/camera/com.qti.tuned.default.canoe.bin
-odm/lib64/camera/com.qti.tuned.myron_aac_ov50m_ultra_i.bin
-odm/lib64/camera/com.qti.tuned.myron_aac_ovx9500_wide_ii.bin
-odm/lib64/camera/com.qti.tuned.myron_aac_s5kjn5_tele_ii.bin
-odm/lib64/camera/com.qti.tuned.myron_ofilm_ov32d40_front_i.bin
-odm/lib64/camera/com.qti.tuned.myron_semco_s5kjn5_tele_i.bin
-odm/lib64/camera/com.qti.tuned.myron_sunny_ovx9500_wide_i.bin
 
 # Camera (vendor)
 vendor/etc/camera/cameraopt_perf.json
@@ -1287,12 +1188,11 @@ vendor/lib64/libcom.xiaomi.signaltrigger.so
 vendor/lib64/libcom.xiaomi.threadpool.so
 vendor/lib64/libcom.xiaomi.timer.so
 vendor/lib64/libDlhookDumpStates.so
-vendor/lib64/libdng_sdk.so:vendor/lib64/libdng_sdk-myron.so;FIX_SONAME
+vendor/lib64/libdng_sdk.so:vendor/lib64/libdng_sdk-songyuan.so;FIX_SONAME
 vendor/lib64/libdscaalgo.so
 vendor/lib64/libecoengine.so
 vendor/lib64/libfastmessage.so
 vendor/lib64/libGenie.so
-vendor/lib64/libheichal.so
 vendor/lib64/libhme.so
 vendor/lib64/libhwliqinterface2.so
 vendor/lib64/libhwlispcffdump.so
@@ -1334,9 +1234,7 @@ vendor/lib64/libofflinedebugdata.so
 vendor/lib64/libois_channel_stub.so
 vendor/lib64/liboischannel.so
 vendor/lib64/libopencl_loader.so
-vendor/lib64/libopencv_core_se.so
 vendor/lib64/libopencv_core.so
-vendor/lib64/libopencv_imgproc_se.so
 vendor/lib64/libopencv_imgproc.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
@@ -1349,7 +1247,6 @@ vendor/lib64/libqshcamera_sensinghubapi.so
 vendor/lib64/libqshcamera.so
 vendor/lib64/libRecordCNN.so
 vendor/lib64/libSEESalt.so
-vendor/lib64/libSEGModel.so
 vendor/lib64/libshadowhook.so
 vendor/lib64/libsiminputgenutil.so
 vendor/lib64/libsimulation.so
@@ -1382,8 +1279,6 @@ vendor/lib64/vendor.xiaomi.hardware.aon-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.aon.auth-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.bgservice@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.bgservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.camera.companion-impl.so
-vendor/lib64/vendor.xiaomi.hardware.camera.companion-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.camera.injection-client.so
 vendor/lib64/vendor.xiaomi.hardware.camera.injection-service.so
 vendor/lib64/vendor.xiaomi.hardware.camera.injection-V1-ndk.so
@@ -1396,7 +1291,6 @@ vendor/lib64/vendor.xiaomi.hardware.postprocservice-V1-ndk.so
 vendor/lib64/vendor.xiaomi.sensor.camera-V1-ndk.so
 
 # Display
-odm/etc/spr_cfg_xiaomi_p11u_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
 
 # Display (D2 calibration data)
 odm/firmware/asic_panel.bin
@@ -1416,9 +1310,6 @@ odm/firmware/nn_02000000.bin
 odm/firmware/nn_03000000.bin
 odm/firmware/nn_12000000.bin
 odm/firmware/paneldata_0x00000032.bin
-odm/firmware/paneldata_0x00000036.bin
-odm/firmware/paneldata_0x00000042.bin
-odm/firmware/paneldata_0x10000032.bin
 odm/firmware/pq_00000000.bin
 odm/firmware/pq_global_00000000.bin
 
@@ -1426,80 +1317,17 @@ odm/firmware/pq_global_00000000.bin
 odm/lib64/libfcsam.so
 odm/lib64/libframemaster.so
 odm/lib64/libframemasterintf.so
+odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
 odm/lib64/libmiam.so;FIX_SONAME
 odm/lib64/libnvticcontroller.so
 odm/lib64/libtouchreport_alg_fts.so;FIX_SONAME
 odm/lib64/vendor.novatek.hardware.visdisplaysrv-V1-ndk.so
-odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
 
 # Displayfeature (configs)
 odm/etc/df_default.xml
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/cct_pcc.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut0.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut1.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut10.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut11.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut12.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut2.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut3.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut4.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut5.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut6.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut7.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut8.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLut9.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/ClstcLutInfo.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/PicHDRLchIn.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/clstc_gc_0.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/clstc/clstc_igc_0.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLutInfo.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_0.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_1.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_10.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_11.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_12.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_13.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_14.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_15.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_16.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_17.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_18.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_19.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_2.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_20.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_21.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_22.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_23.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_24.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_25.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_26.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_27.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_28.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_29.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_3.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_30.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_31.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_32.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_33.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_34.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_35.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_36.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_4.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_5.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_6.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_7.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_8.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/miLut_9.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/mi_gc_0.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/mi_gc_1.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/mi_gc_2.txt
-odm/etc/disp0/mdss_dsi_p11u_42_0d_0a_dsc_cmd/mi_gc_3.txt
 odm/etc/display/B_Com_Gary_Gain.csv
 odm/etc/display/G_Com_Gary_Gain.csv
 odm/etc/display/R_Com_Gary_Gain.csv
-odm/etc/display/ltm_config_xiaomi_p11u_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
-odm/etc/display/mdss_dsi_p11u_42_0d_0a_dsc_cmd_bl.json
-odm/etc/display/qdcm_calib_data_xiaomi_p11u_42_0d_0a_cmd_mode_dsc_dsi_panel.json
 
 # Dolby
 odm/etc/dolby/dax-default-spatializer.xml
@@ -1509,7 +1337,6 @@ odm/vendor/etc/dolby_vision.cfg
 odm/vendor/persist/display/dolby_vision.cfg
 
 # Euicc - from blazer-user-17-CP2A.260805.005-15828068-release-keys
-product/priv-app/EuiccGoogle/EuiccGoogle.apk|b90c9c9e58b443c07357d5b55b7b2789fa450ab4
 
 # Fingerprint
 odm/lib64/hw/fingerprint.goodix_us2.so:odm/lib64/hw/fingerprint.goodix_us2.default.so;FIX_SONAME
@@ -1523,26 +1350,15 @@ system_ext/framework/xiaomi-modem-common.jar
 vendor/bin/init.kernel.post_boot-memory.sh
 
 # NFC
-odm/etc/libnfc-nxp_RF.conf:vendor/etc/libnfc-nxp_RF.conf
 
 # Sensors
-odm/etc/sensors/config/5cm_blue.png
-odm/etc/sensors/config/5cm_gray.png
-odm/etc/sensors/config/5cm_green.png
-odm/etc/sensors/config/5cm_red.png
-odm/etc/sensors/config/5cm_white.png
 odm/etc/sensors/config/ak7323.json
-odm/etc/sensors/config/center_cali_all.png
-odm/etc/sensors/config/center_cali_x.png
-odm/etc/sensors/config/center_cali_y.png
 odm/etc/sensors/config/chre_dynamic_sensors.json
 odm/etc/sensors/config/json.lst
 odm/etc/sensors/config/kaanapali_ccd_base.json
 odm/etc/sensors/config/kaanapali_qsh_ble_0.json
 odm/etc/sensors/config/lightSensorConfig.json
 odm/etc/sensors/config/qsh_ble.json
-odm/etc/sensors/config/qsh_camera_aon_front_i_1.json
-odm/etc/sensors/config/qsh_camera_aon_rear_i_2.json
 odm/etc/sensors/config/qsh_camera_common.json
 odm/etc/sensors/config/sm8850_ak7323.json
 odm/etc/sensors/config/sm8850_default_sensors.json
@@ -1550,17 +1366,11 @@ odm/etc/sensors/config/sm8850_gls6151.json
 odm/etc/sensors/config/sm8850_irq.json
 odm/etc/sensors/config/sm8850_lsm6dsv_0.json
 odm/etc/sensors/config/sm8850_power_0.json
-odm/etc/sensors/config/sm8850_qmc6309_0.json
-odm/etc/sensors/config/sm8850_stk6b9x.json
-odm/etc/sensors/config/sm8850_sx937x_0.json
 odm/etc/sensors/config/sns_amd.json
-odm/etc/sensors/config/sns_aod.json
 odm/etc/sensors/config/sns_aont.json
 odm/etc/sensors/config/sns_cm.json
-odm/etc/sensors/config/sns_collision_detection.json
 odm/etc/sensors/config/sns_dae.json
 odm/etc/sensors/config/sns_dbtap.json
-odm/etc/sensors/config/sns_device_orient.json
 odm/etc/sensors/config/sns_diag_filter.json
 odm/etc/sensors/config/sns_direct_channel.json
 odm/etc/sensors/config/sns_distance_bound.json
@@ -1569,40 +1379,31 @@ odm/etc/sensors/config/sns_flight_md.json
 odm/etc/sensors/config/sns_fmv.json
 odm/etc/sensors/config/sns_gyro_cal.json
 odm/etc/sensors/config/sns_gyro_cal_dynamic.json
-odm/etc/sensors/config/sns_healthy_use_of_mobile.json
 odm/etc/sensors/config/sns_mag_cal.json
-odm/etc/sensors/config/sns_nonui.json
-odm/etc/sensors/config/sns_oem_pocket.json
 odm/etc/sensors/config/sns_offbody_detect_phone.json
 odm/etc/sensors/config/sns_pedometer.json
 odm/etc/sensors/config/sns_rmd.json
 odm/etc/sensors/config/sns_rotv.json
-odm/etc/sensors/config/sns_sar_algo.json
-odm/etc/sensors/config/sns_screen_down.json
 odm/etc/sensors/config/sns_smd.json
 odm/etc/sensors/config/sns_tilt.json
 odm/etc/sensors/config/sns_tilt_to_wake.json
 odm/etc/sensors/config/sns_transport_ppe.json
-odm/etc/sensors/config/sx937x_0.json
-odm/etc/sensors/config/sx937x_reg_0.json
 odm/etc/cit_param_config.json
 
 # Touchfeature
 odm/bin/toucheventcheck
-odm/lib64/libtouchreport_alg.so
 odm/lib64/libtouchreport_hal.so
 odm/lib64/libtouchreport_sensor.so
 odm/lib64/libtouchreport.so
 
 # Touchscreen
-odm/firmware/focaltech_ts_fw_myron.bin
-odm/firmware/myron_fts_thp_config.ini
+odm/firmware/focaltech_ts_fw_songyuan.bin
+odm/firmware/songyuan_fts_thp_config.cfg
 odm/firmware/Conf_MultipleTest.ini
 
 # Thermal config
 odm/etc/thermal-4k.conf
 odm/etc/thermal-arvr.conf
-odm/etc/thermal-backup.conf
 odm/etc/thermal-camera.conf
 odm/etc/thermal-cclassvideo.conf
 odm/etc/thermal-cgame.conf
@@ -1623,11 +1424,9 @@ odm/etc/thermal-per-normal.conf
 odm/etc/thermal-per-video.conf
 odm/etc/thermal-phone.conf
 odm/etc/thermal-recharge.conf
-odm/etc/thermal-speedometer.conf
 odm/etc/thermal-tgame.conf
 odm/etc/thermal-video.conf
 odm/etc/thermal-videochat.conf
-odm/etc/thermal-winplay.conf
 odm/etc/thermal-xingtie.conf
 odm/etc/thermal-yuanshen.conf
 
@@ -1648,3 +1447,166 @@ odm/firmware/6_ringTone1_P_RTP.bin:vendor/etc/vibrator/primitive_effect_6.bin
 odm/firmware/7_ringTone2_P_RTP.bin:vendor/etc/vibrator/primitive_effect_7.bin
 odm/firmware/8_ringTone3_P_RTP.bin:vendor/etc/vibrator/primitive_effect_8.bin
 odm/firmware/9_ringTone4_P_RTP.bin:vendor/etc/vibrator/primitive_effect_9.bin
+
+# songyuan-specific (panel, touch, camera, sensors)
+# Moved out of sm8850-common: different partition on songyuan
+odm/etc/camera/Q11_wide_41.bin
+odm/etc/camera/SNSC_HPE_LBMF_Debanding.minn
+odm/etc/camera/SNSC_OV50X_LBMF_Debanding.minn
+odm/etc/camera/anc_model_fd
+odm/etc/camera/anc_sdsr_binary_cache
+odm/etc/camera/anc_sdsr_kernel_cache
+odm/etc/camera/anc_sdsr_model
+odm/etc/camera/anc_sdsr_policy_cache
+odm/etc/camera/arc_bokeh_config.bin
+odm/etc/camera/aucca.minn
+odm/etc/camera/cameraopt_reclaim.json
+odm/etc/camera/clip.minn
+odm/etc/camera/com.xiaomi.dcal.w_07.t4_10.golden
+odm/etc/camera/com.xiaomi.dcal.w_07.u_01.golden
+odm/etc/camera/enhance_motiontuning.xml
+odm/etc/camera/facesr_ff_v6.0.66_qcom8850_rQsQ_hd@nb_hd05210408LHNoiseQnn2.33.0Q35.3_fast_20260522.model
+odm/etc/camera/gan_animal_20x.minn
+odm/etc/camera/gan_animal_50x.minn
+odm/etc/camera/goldResult_2_t4w.bin
+odm/etc/camera/goldResult_2_wu.bin
+odm/etc/camera/goldResult_t4w.bin
+odm/etc/camera/goldResult_wu.bin
+odm/etc/camera/harbo_se_q11x_tele_fullsize_quad_4frame.minn
+odm/etc/camera/harbo_se_q11x_tele_isz_quad_8frame.minn
+odm/etc/camera/harbo_se_q11x_tele_quad_1frame.minn
+odm/etc/camera/harbo_se_q11x_wide_quad_1frame.minn
+odm/etc/camera/harbo_se_q11x_wide_quad_4frame.minn
+odm/etc/camera/harbo_sr_q11x_stele_binning_2x_8frame.minn
+odm/etc/camera/harbo_sr_q11x_stele_fullsizequad_4frame.minn
+odm/etc/camera/harbo_sr_q11x_stele_iszquad_8frame.minn
+odm/etc/camera/harbo_sr_q11x_wide_fullsizequad_4frame.minn
+odm/etc/camera/human_seg_bimap_quant_npu_768.minn
+odm/etc/camera/ipe_gamma_for_EI.xml
+odm/etc/camera/libarcsoft_dualcam_bokeh_image.bin
+odm/etc/camera/local_faceAWB_tuning_params.json
+odm/etc/camera/mage_facecolor_cl.bin
+odm/etc/camera/mi_qcom_debanding_config.xml
+odm/etc/camera/mi_tuning/songyuan_front_a.bin
+odm/etc/camera/mi_tuning/songyuan_tele_a.bin
+odm/etc/camera/mi_tuning/songyuan_ultra_a.bin
+odm/etc/camera/mi_tuning/songyuan_wide_a.bin
+odm/etc/camera/mialgo_monopan_cl.bin
+odm/etc/camera/model_ai_pp2pd5_small.minn
+odm/etc/camera/motiontuning.xml
+odm/etc/camera/protection_config.json
+odm/etc/camera/ucc.minn
+odm/etc/camera/xmdevcamrfcfg.json
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/cct_pcc.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut0.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut1.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut10.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut11.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut12.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut2.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut3.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut4.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut5.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut6.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut7.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut8.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLut9.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/ClstcLutInfo.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/PicHDRLchIn.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/clstc_gc_0.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/clstc/clstc_igc_0.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLutInfo.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_0.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_1.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_10.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_11.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_12.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_13.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_14.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_15.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_16.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_17.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_18.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_19.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_2.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_20.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_21.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_22.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_23.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_24.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_25.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_26.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_27.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_28.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_29.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_3.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_30.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_31.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_32.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_33.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_34.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_35.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_36.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_37.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_4.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_5.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_6.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_7.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_8.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/miLut_9.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/mi_gc_0.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/mi_gc_1.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/mi_gc_2.txt
+odm/etc/disp0/mdss_dsi_songyuan_42_0d_0a_dsc_cmd/mi_gc_3.txt
+odm/etc/display/B_Com_Gary_Gain_mdss_dsi_songyuan_42_0d_0a_dsc_cmd.csv
+odm/etc/display/G_Com_Gary_Gain_mdss_dsi_songyuan_42_0d_0a_dsc_cmd.csv
+odm/etc/display/R_Com_Gary_Gain_mdss_dsi_songyuan_42_0d_0a_dsc_cmd.csv
+odm/etc/display/ltm_config_xiaomi_songyuan_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
+odm/etc/display/mdss_dsi_songyuan_42_0d_0a_dsc_cmd_bl.json
+odm/etc/display/qdcm_calib_data_xiaomi_songyuan_42_0d_0a_cmd_mode_dsc_dsi_panel.json
+odm/etc/sensors/config/oem_aod.json
+odm/etc/sensors/config/oem_collision_detect.json
+odm/etc/sensors/config/oem_device_orient.json
+odm/etc/sensors/config/oem_elevator.json
+odm/etc/sensors/config/oem_gpd.json
+odm/etc/sensors/config/oem_healthy_use_of_mobile.json
+odm/etc/sensors/config/oem_nonui.json
+odm/etc/sensors/config/oem_pick_up.json
+odm/etc/sensors/config/oem_proximity.json
+odm/etc/sensors/config/oem_sar_algo.json
+odm/etc/sensors/config/oem_sar_algo_cn.json
+odm/etc/sensors/config/oem_screen_down.json
+odm/etc/sensors/config/qsh_camera_aon_front_a_1.json
+odm/etc/sensors/config/qsh_camera_aon_rear_a_2.json
+odm/etc/sensors/config/sm8850_ak991x_0.json
+odm/etc/sensors/config/sm8850_hx903x_0.json
+odm/etc/sensors/config/sm8850_sip2326lr1n.json
+odm/etc/sensors/config/sns_oem_shkcam.json
+odm/etc/spr_cfg_xiaomi_songyuan_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
+odm/lib64/camera/aon_front_a_1.pb
+odm/lib64/camera/aon_rear_a_2.pb
+odm/lib64/camera/com.qti.actuator.songyuan_tele_a_actuator.so
+odm/lib64/camera/com.qti.actuator.songyuan_wide_a_actuator.so
+odm/lib64/camera/com.qti.eeprom.songyuan_front_a_eeprom.so
+odm/lib64/camera/com.qti.eeprom.songyuan_tele_a_eeprom.so
+odm/lib64/camera/com.qti.eeprom.songyuan_ultra_a_eeprom.so
+odm/lib64/camera/com.qti.eeprom.songyuan_wide_a_eeprom.so
+odm/lib64/camera/com.qti.sensor.songyuan_front_a.so
+odm/lib64/camera/com.qti.sensor.songyuan_tele_a.so
+odm/lib64/camera/com.qti.sensor.songyuan_ultra_a.so
+odm/lib64/camera/com.qti.sensor.songyuan_wide_a.so
+odm/lib64/camera/com.qti.sensormodule.songyuan_front_a.bin
+odm/lib64/camera/com.qti.sensormodule.songyuan_tele_a.bin
+odm/lib64/camera/com.qti.sensormodule.songyuan_ultra_a.bin
+odm/lib64/camera/com.qti.sensormodule.songyuan_wide_a.bin
+odm/lib64/camera/com.qti.tuned.songyuan_front_a.bin
+odm/lib64/camera/com.qti.tuned.songyuan_tele_a.bin
+odm/lib64/camera/com.qti.tuned.songyuan_ultra_a.bin
+odm/lib64/camera/com.qti.tuned.songyuan_wide_a.bin
+odm/lib64/libaiawb.so
+odm/lib64/libshg.so
+odm/lib64/libtriplecam_optical_zoom_control.so
+odm/lib64/libtriplecam_optical_zoom_fusion.so
+odm/lib64/libtriplecam_video_optical_zoom.so
+vendor/lib64/libheichal_qcom.so
+vendor/lib64/liblegendmsg.so

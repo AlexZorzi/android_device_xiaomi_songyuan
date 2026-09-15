@@ -4,8 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/myron
+DEVICE_PATH := device/xiaomi/songyuan
 KERNEL_PATH := $(DEVICE_PATH)-kernel
+
+KERNEL_RELEASE := 6.12.69-android16-6-g0d80ee00f747-ab15461283-4k
 
 # Inherit from sm8650-common
 include device/xiaomi/sm8850-common/BoardConfigCommon.mk
@@ -31,10 +33,18 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(KERNEL_PATH)/vendor_dlkm/,$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules) \
     $(call find-copy-subdir-files,*,$(KERNEL_PATH)/vendor_ramdisk/,$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/modules) \
     $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm_flatten/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/flatten/lib/modules) \
-    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/lib/modules/6.12.23-android16-5-g316453da9a9e-abogki441133159-4k)
+    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/lib/modules/$(KERNEL_RELEASE))
 
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
 
+# Partitions
+BOARD_SUPER_PARTITION_SIZE := 16642998272
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 16632512512
+
+# Security
+BOOT_SECURITY_PATCH := 2026-08-01
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
 # Inherit from the proprietary version
-include vendor/xiaomi/myron/BoardConfigVendor.mk
+include vendor/xiaomi/songyuan/BoardConfigVendor.mk

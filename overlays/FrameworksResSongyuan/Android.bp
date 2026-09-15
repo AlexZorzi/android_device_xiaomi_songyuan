@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsOverlayMyron",
+    name: "FrameworksResSongyuan",
     device_specific: true,
 }

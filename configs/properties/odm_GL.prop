@@ -1,6 +1,6 @@
-bluetooth.device.default_name=Poco F8 Ultra
-ro.product.marketname=Poco F8 Ultra
-ro.product.odm.brand=Poco
-ro.product.odm.model=25102PCBEG
-ro.product.odm.name=myron_global
-vendor.usb.product_string=Poco F8 Ultra
+bluetooth.device.default_name=POCO F9 Ultra
+ro.product.marketname=POCO F9 Ultra
+ro.product.odm.brand=POCO
+ro.product.odm.model=26077PC53G
+ro.product.odm.name=songyuan_eea
+vendor.usb.product_string=POCO F9 Ultra

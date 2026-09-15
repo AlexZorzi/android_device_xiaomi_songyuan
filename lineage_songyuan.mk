@@ -11,14 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from myron device.
-$(call inherit-product, device/xiaomi/myron/device.mk)
+# Inherit from songyuan device.
+$(call inherit-product, device/xiaomi/songyuan/device.mk)
 
 ## Device identifier
-PRODUCT_DEVICE := myron
-PRODUCT_NAME := lineage_myron
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := 25102RKBEC
+PRODUCT_DEVICE := songyuan
+PRODUCT_NAME := lineage_songyuan
+PRODUCT_BRAND := POCO
+PRODUCT_MODEL := 26077PC53G
 PRODUCT_MANUFACTURER := xiaomi
 
-BUILD_FINGERPRINT := Xiaomi/myron/myron:16/BQ2A.250705.001-BP2A.250605.031.A3/OS3.0.303.0.WPMCNXM:user/release-keys
+BUILD_FINGERPRINT := POCO/songyuan_eea/songyuan:16/BQ2A.260225.001-BP2A.250705.008/OS3.0.305.0.WGNEUXM:user/release-keys

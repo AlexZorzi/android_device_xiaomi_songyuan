@@ -5,10 +5,10 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.systemui.xiaomi.myron">
+    package="android.overlay.xiaomi.songyuan">
 
     <overlay
         android:isStatic="true"
         android:priority="801"
-        android:targetPackage="com.android.systemui" />
+        android:targetPackage="android"/>
 </manifest>

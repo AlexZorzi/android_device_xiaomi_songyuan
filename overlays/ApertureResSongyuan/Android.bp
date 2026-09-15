@@ -5,7 +5,7 @@
 //
 
 runtime_resource_overlay {
-    name: "ApertureOverlayMyron",
+    name: "ApertureOverlaySongyuan",
     sdk_version: "current",
     vendor: true,
 }

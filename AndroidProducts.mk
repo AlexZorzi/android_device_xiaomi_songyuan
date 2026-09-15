@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_myron.mk
+    $(LOCAL_DIR)/lineage_songyuan.mk

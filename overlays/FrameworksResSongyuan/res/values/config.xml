@@ -398,7 +398,7 @@
          -2 is invalid so setting will resort to int value specified above.
          Set this to 0.0 to allow screen to go to minimal brightness.
          The user is forbidden from setting the brightness below this level. -->
-    <item format="float" name="config_screenBrightnessSettingMinimumFloat" type="dimen">0.000244171</item>
+    <item format="float" name="config_screenBrightnessSettingMinimumFloat" type="dimen">0.000366256</item>
 
     <!-- Maximum screen brightness allowed by the power manager.
          -2 is invalid so setting will resort to int value specified above.
@@ -409,7 +409,7 @@
     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
          Must be in the range specified by minimum and maximum. -->
-    <item format="float" name="config_screenBrightnessSettingDefaultFloat" type="dimen">0.052313514</item>
+    <item format="float" name="config_screenBrightnessSettingDefaultFloat" type="dimen">0.08021</item>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
@@ -423,7 +423,7 @@
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">17</integer>
-    <item format="float" name="config_screenBrightnessDimFloat" type="dimen">0.000244171</item>
+    <item format="float" name="config_screenBrightnessDimFloat" type="dimen">0.000366256</item>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
@@ -452,7 +452,10 @@
                 <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0,0 H -36 V 144 H 36 V 0 H 0 Z</string>
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0,0 H -31 V 144 H 31 V 0 H 0 Z</string>
+
+    <!-- The bounding path of the display shape, in display coordinates with pixel units. -->
+    <string name="config_mainDisplayShape" translatable="false">M20 0h1040s20 0 20 20v2360s0 20 -20 20h-1040s-20 0 -20 -20v-2360s0 -20 20 -20</string>
 
     <!-- The default refresh rate for a given device. Change this value to set a higher default
          refresh rate. If the hardware composer on the device supports display modes with a higher

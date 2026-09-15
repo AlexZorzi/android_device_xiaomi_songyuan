@@ -1,1 +1,1 @@
-require board=myron|canoe
+require board=songyuan|canoe

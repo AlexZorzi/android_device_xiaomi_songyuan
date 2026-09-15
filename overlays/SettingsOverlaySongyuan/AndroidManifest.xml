@@ -5,11 +5,11 @@
 -->
 <manifest 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.settingsoverlay.myron">
+    package="org.lineageos.settingsoverlay.songyuan">
 
     <application android:hasCode="false" />
     <overlay android:isStatic="true"
              android:priority="1"
              android:targetPackage="com.android.settings"
-             android:targetName="MyronSettingsOverlay" />
+             android:targetName="SongyuanSettingsOverlay" />
 </manifest>

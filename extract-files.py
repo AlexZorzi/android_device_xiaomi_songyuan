@@ -107,7 +107,7 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed(
             'libdng_sdk.so',
-            'libdng_sdk-myron.so'
+            'libdng_sdk-songyuan.so'
         ),
     (
         "odm/lib64/camera/dynamicplugins/com.xiaomi.plugin.mialgoallinone.so",
@@ -159,7 +159,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'myron',
+    'songyuan',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
