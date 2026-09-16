@@ -1316,8 +1316,6 @@ odm/firmware/pq_global_00000000.bin
 # Display (virtual display service)
 odm/lib64/libfcsam.so
 odm/lib64/libframemaster.so
-odm/lib64/libframemasterintf.so
-odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
 odm/lib64/libmiam.so;FIX_SONAME
 odm/lib64/libnvticcontroller.so
 odm/lib64/libtouchreport_alg_fts.so;FIX_SONAME
@@ -1606,7 +1604,7 @@ odm/lib64/camera/com.qti.tuned.songyuan_wide_a.bin
 odm/lib64/libaiawb.so
 odm/lib64/libshg.so
 odm/lib64/libtriplecam_optical_zoom_control.so
-odm/lib64/libtriplecam_optical_zoom_fusion.so
-odm/lib64/libtriplecam_video_optical_zoom.so
+odm/lib64/libtriplecam_optical_zoom_fusion.so;DISABLE_CHECKELF
+odm/lib64/libtriplecam_video_optical_zoom.so;DISABLE_CHECKELF
 vendor/lib64/libheichal_qcom.so
 vendor/lib64/liblegendmsg.so

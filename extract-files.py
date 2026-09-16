@@ -57,6 +57,8 @@ def blob_fixup_gme_ois_read(
 
 blob_fixups: blob_fixups_user_type = {
     (
+        'odm/etc/camera/enhance_motiontuning.xml',
+        'odm/etc/camera/motiontuning.xml',
         'odm/etc/camera/snsc_bokeh_motiontuning.xml',
         'odm/etc/camera/snsc_enhance_motiontuning.xml',
         'odm/etc/camera/snsc_noface_motiontuning.xml',

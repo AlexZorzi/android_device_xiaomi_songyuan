@@ -20,7 +20,13 @@ BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
+# Kernel headers: no kernel source is published for songyuan, so ship the QTI
+# UAPI headers (IPA) that in-tree code needs. This assignment feeds the
+# prebuilt_kernel_includes genrule, but cc.go reads the same name with Getenv,
+# which a makefile cannot set (export is rejected by the build system). So it
+# must ALSO be exported in the shell, or libipanat fails on linux/msm_ipa.h:
+#   export TARGET_PREBUILT_KERNEL_HEADERS=device/xiaomi/songyuan-kernel/kernel-headers.tar.gz
+TARGET_PREBUILT_KERNEL_HEADERS := $(KERNEL_PATH)/kernel-headers.tar.gz
 PRODUCT_COPY_FILES += \
 	$(KERNEL_PATH)/kernel:kernel
 
