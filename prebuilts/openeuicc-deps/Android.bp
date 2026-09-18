@@ -1,0 +1,17 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// OpenEUICC's Android.bp expects its Gradle dependencies to be provided by the
+// tree. Everything it needs is already in AOSP except the QR scanner wrapper,
+// so vendor that one AAR here. zxing-core comes from external/zxing.
+android_library_import {
+    name: "OpenEUICC_com.journeyapps_zxing-android-embedded",
+    aars: ["zxing-android-embedded-4.3.0.aar"],
+    sdk_version: "current",
+    min_sdk_version: "24",
+    static_libs: [
+        "zxing-core",
+    ],
+}

@@ -33,16 +33,10 @@ PRODUCT_PACKAGES += \
     XiaomiEuicc \
     XiaomiEsimSwitcher
 
-# OpenEUICC as the LPA. EuiccGoogle cannot work here: it locates the eUICC via
-# TelephonyManager slot info, and this modem reports mIsEuicc=false with an
-# empty EID for both slots. OpenEUICC (privileged) instead opens a logical
-# channel to the eSIM and speaks ES10 APDUs directly, so it does not depend on
-# the modem advertising an eUICC slot. Same approach as nezha (Xiaomi 17, SM8850).
+# OpenEUICC, built from source (packages/apps/OpenEUICC). It ships its own
+# privapp allowlist and liblpac-jni.
 PRODUCT_PACKAGES += \
     OpenEUICC
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp_whitelist_im.angry.openeuicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp_whitelist_im.angry.openeuicc.xml
 
 # Declare the eUICC features so EuiccManager exists and the EuiccGoogle LPA can
 # start (TelephonyFrameworkInitializer gates EUICC_SERVICE on this). The LPA
