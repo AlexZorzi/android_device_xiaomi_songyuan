@@ -1,7 +1,6 @@
 bluetooth.device.default_name=Redmi K100 Pro Max
 ro.product.marketname=Redmi K100 Pro Max
 ro.product.odm.brand=Redmi
-# TODO: take the CN model number from a stock Redmi K100 Pro Max dump.
-ro.product.odm.model=26077PC53G
+ro.product.odm.model=Redmi K100 Pro Max
 ro.product.odm.name=songyuan
 vendor.usb.product_string=Redmi K100 Pro Max

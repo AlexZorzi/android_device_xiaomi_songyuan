@@ -1319,7 +1319,6 @@ odm/lib64/libframemaster.so
 odm/lib64/libmiam.so;FIX_SONAME
 odm/lib64/libnvticcontroller.so
 odm/lib64/libtouchreport_alg_fts.so;FIX_SONAME
-odm/lib64/vendor.novatek.hardware.visdisplaysrv-V1-ndk.so
 
 # Displayfeature (configs)
 odm/etc/df_default.xml
@@ -1398,6 +1397,10 @@ odm/lib64/libtouchreport.so
 odm/firmware/focaltech_ts_fw_songyuan.bin
 odm/firmware/songyuan_fts_thp_config.cfg
 odm/firmware/Conf_MultipleTest.ini
+odm/firmware/glove_model.tflite
+odm/firmware/water_check.tflite
+odm/firmware/smooth.tflite
+odm/firmware/film_model.tflite
 
 # Thermal config
 odm/etc/thermal-4k.conf
@@ -1581,6 +1584,38 @@ odm/etc/sensors/config/sm8850_hx903x_0.json
 odm/etc/sensors/config/sm8850_sip2326lr1n.json
 odm/etc/sensors/config/sns_oem_shkcam.json
 odm/etc/spr_cfg_xiaomi_songyuan_42_0d_0a_cmd_mode_dsc_dsi_panel.xml
+odm/etc/thermal-cheji.conf
+odm/etc/thermal-gl-4k.conf
+odm/etc/thermal-gl-arvr.conf
+odm/etc/thermal-gl-camera.conf
+odm/etc/thermal-gl-cclassvideo.conf
+odm/etc/thermal-gl-cgame.conf
+odm/etc/thermal-gl-charge.conf
+odm/etc/thermal-gl-cheji.conf
+odm/etc/thermal-gl-class0.conf
+odm/etc/thermal-gl-danmu.conf
+odm/etc/thermal-gl-highfps.conf
+odm/etc/thermal-gl-hp-mgame.conf
+odm/etc/thermal-gl-hp-normal.conf
+odm/etc/thermal-gl-huanji.conf
+odm/etc/thermal-gl-mgame.conf
+odm/etc/thermal-gl-navigation.conf
+odm/etc/thermal-gl-nolimits.conf
+odm/etc/thermal-gl-normal.conf
+odm/etc/thermal-gl-per-class0.conf
+odm/etc/thermal-gl-per-normal.conf
+odm/etc/thermal-gl-per-video.conf
+odm/etc/thermal-gl-phone.conf
+odm/etc/thermal-gl-recharge.conf
+odm/etc/thermal-gl-tgame.conf
+odm/etc/thermal-gl-video.conf
+odm/etc/thermal-gl-videochat.conf
+odm/etc/thermal-gl-xingtie.conf
+odm/etc/thermal-gl-yuanshen.conf
+odm/etc/thermal-map-global.conf
+odm/etc/thermal-odm-map.conf
+odm/etc/thermal-region-map.conf
+odm/etc/thermalbreakboostconfig.xml
 odm/lib64/camera/aon_front_a_1.pb
 odm/lib64/camera/aon_rear_a_2.pb
 odm/lib64/camera/com.qti.actuator.songyuan_tele_a_actuator.so
@@ -1606,5 +1641,16 @@ odm/lib64/libshg.so
 odm/lib64/libtriplecam_optical_zoom_control.so
 odm/lib64/libtriplecam_optical_zoom_fusion.so;DISABLE_CHECKELF
 odm/lib64/libtriplecam_video_optical_zoom.so;DISABLE_CHECKELF
+odm/lib64/libtouchreport_alg_2.so;FIX_SONAME
+odm/lib64/vendor.novatek.hardware.visdisplaysrv-V1-ndk.so
+odm/etc/touch/dynamicrate.json
+odm/etc/touch/gameturbotool-control.json
+odm/etc/touch/gameturbotool-fastinput.json
+odm/etc/touch/gameturbotool.json
+odm/etc/dqe/TouchGameInfo.xml
+odm/etc/dqe/TouchGameInfo_1472x3200.xml
+odm/etc/dqe/TouchGameInfo_1478x3200.xml
+odm/etc/init/init.boled.lightsensor.rc
 vendor/lib64/libheichal_qcom.so
 vendor/lib64/liblegendmsg.so
+mi_ext/product/priv-app/EuiccGoogle/EuiccGoogle.apk:product/priv-app/EuiccGoogle/EuiccGoogle.apk

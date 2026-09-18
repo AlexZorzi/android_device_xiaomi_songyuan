@@ -13,5 +13,17 @@ persist.vendor.sensor.mischeck=true
 ro.vendor.sensor.maxbrightness=7800
 ro.vendor.proxcal.factor=2.82
 
+# FOD (ultrasonic under-display fingerprint). Values taken from stock
+# odm/etc/build.prop; us.target is the sensor rectangle the touch controller
+# uses to enable FOD reporting, centred on sensor_location above.
+ro.hardware.fp.fod=true
+ro.hardware.fp.fod.c=true
+ro.hardware.fp.fod.touch.ctl.version=2.0
+ro.vendor.display.fod_monitor_default_fps=120
+ro.vendor.mi_sf.disable_mifod_flag=true
+persist.vendor.sys.fp.fod.location.X_Y=525,1955
+persist.vendor.sys.fp.fod.size.width_height=150,150
+persist.vendor.sys.fp.fod.us.target=517,1939,683,2121
+
 # SKU
 import /odm/etc/odm_${ro.boot.hwc}.prop

@@ -144,9 +144,11 @@ blob_fixups: blob_fixups_user_type = {
         "vendor/bin/hw/vendor.qti.camera.provider-service_64",
         "vendor/lib64/camera/components/com.mi.node.fd.so",
         "vendor/lib64/camera/components/com.qti.node.fd.so",
+        "vendor/lib64/com.xiaomi.stub.chi.so",
         "vendor/lib64/com.xiaomi.stubv1.camx.so",
         "vendor/lib64/hw/camera.qcom.core.so",
         "vendor/lib64/libcamxdumpinforecorder.so",
+        "vendor/lib64/libmicamera_aidl_provider.so",
         "vendor/lib64/libmicamera_hal_core.so",
         "vendor/lib64/libsimulation.so",
     ): blob_fixup()

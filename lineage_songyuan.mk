@@ -18,7 +18,7 @@ $(call inherit-product, device/xiaomi/songyuan/device.mk)
 PRODUCT_DEVICE := songyuan
 PRODUCT_NAME := lineage_songyuan
 PRODUCT_BRAND := POCO
-PRODUCT_MODEL := 26077PC53G
+PRODUCT_MODEL := POCO F9 Ultra
 PRODUCT_MANUFACTURER := xiaomi
 
 BUILD_FINGERPRINT := POCO/songyuan_eea/songyuan:16/BQ2A.260225.001-BP2A.250705.008/OS3.0.305.0.WGNEUXM:user/release-keys
