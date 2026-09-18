@@ -1449,6 +1449,14 @@ odm/firmware/7_ringTone2_P_RTP.bin:vendor/etc/vibrator/primitive_effect_7.bin
 odm/firmware/8_ringTone3_P_RTP.bin:vendor/etc/vibrator/primitive_effect_8.bin
 odm/firmware/9_ringTone4_P_RTP.bin:vendor/etc/vibrator/primitive_effect_9.bin
 
+# NFC (ST54L). songyuan uses ST, sm8850-common ships the NXP configs.
+odm/bin/hw/android.hardware.nfc-service-st
+odm/etc/init/nfc-service-st.rc
+odm/etc/libnfc-hal-st.conf
+odm/etc/libnfc-nci.conf
+odm/etc/st54l_conf.txt
+odm/firmware/st54l_fw.bin
+
 # songyuan-specific (panel, touch, camera, sensors)
 # Moved out of sm8850-common: different partition on songyuan
 odm/etc/camera/Q11_wide_41.bin

@@ -12,6 +12,12 @@ KERNEL_RELEASE := 6.12.69-android16-6-g0d80ee00f747-ab15461283-4k
 # Inherit from sm8650-common
 include device/xiaomi/sm8850-common/BoardConfigCommon.mk
 
+# NFC (ST54L). Our own manifest, not the stock odm one: that also declares
+# ISecureElement/eSE1, which manifest_canoe.xml already declares and
+# secure_element-service.qti already provides.
+ODM_MANIFEST_FILES := \
+    $(DEVICE_PATH)/configs/vintf/nfc-service-st.xml
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 
