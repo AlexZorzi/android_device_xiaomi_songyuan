@@ -14,6 +14,12 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from songyuan device.
 $(call inherit-product, device/xiaomi/songyuan/device.mk)
 
+# MIUI Camera. Activates once its blobs are extracted:
+#   device/xiaomi/songyuan-miuicamera/extract-files.py <stock dump>
+ifneq ($(wildcard vendor/xiaomi/songyuan-miuicamera/songyuan-miuicamera-vendor.mk),)
+$(call inherit-product, device/xiaomi/songyuan-miuicamera/device.mk)
+endif
+
 ## Device identifier
 PRODUCT_DEVICE := songyuan
 PRODUCT_NAME := lineage_songyuan

@@ -60,3 +60,8 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Inherit from the proprietary version
 include vendor/xiaomi/songyuan/BoardConfigVendor.mk
+
+# MIUI Camera
+ifneq ($(wildcard vendor/xiaomi/songyuan-miuicamera/BoardConfigVendor.mk),)
+include device/xiaomi/songyuan-miuicamera/BoardConfig.mk
+endif
