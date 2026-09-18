@@ -1654,3 +1654,5 @@ odm/etc/init/init.boled.lightsensor.rc
 vendor/lib64/libheichal_qcom.so
 vendor/lib64/liblegendmsg.so
 mi_ext/product/priv-app/EuiccGoogle/EuiccGoogle.apk:product/priv-app/EuiccGoogle/EuiccGoogle.apk
+mi_ext/product/priv-app/MIUIEsimLPA/MIUIEsimLPA.apk:product/priv-app/MIUIEsimLPA/MIUIEsimLPA.apk
+mi_ext/product/etc/permissions/privapp-permissions-miext.xml:product/etc/permissions/privapp-permissions-miext.xml

@@ -23,26 +23,37 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer3-V4-ndk.vendor
 
 # Euicc
-# XiaomiEsimSwitcher (com.xiaomi.mtb) is deliberately NOT included: Settings
-# routes the eSIM entry to its EsimSettingsActivity, which issues a synchronous
-# Xiaomi OEM RIL hook (onGetEsimStatus, msg type 83) straight to the modem and
-# blocks on a 5s timer. The modem does not service that vendor request here, so
-# the blocked call takes down system_server. Without it, eSIM goes through the
-# EuiccGoogle LPA instead.
+# XiaomiEsimSwitcher provides the only path that powers the eSIM on: its toggle
+# calls onHookUimPowerReqEx + onSetEsimStatus, which write the enable state to
+# modem EFS and bring up the chip's PMIC rail. The eUICC is otherwise unpowered,
+# which is why every slot reports mIsEuicc=false with an empty EID and no LPA
+# can find it. See the local patch in hardware/xiaomi: the status *getter* hangs
+# on this device and had to be kept off the settings screen's load path.
 PRODUCT_PACKAGES += \
-    XiaomiEuicc
+    XiaomiEuicc \
+    XiaomiEsimSwitcher
+
+# OpenEUICC as the LPA. EuiccGoogle cannot work here: it locates the eUICC via
+# TelephonyManager slot info, and this modem reports mIsEuicc=false with an
+# empty EID for both slots. OpenEUICC (privileged) instead opens a logical
+# channel to the eSIM and speaks ES10 APDUs directly, so it does not depend on
+# the modem advertising an eUICC slot. Same approach as nezha (Xiaomi 17, SM8850).
+PRODUCT_PACKAGES += \
+    OpenEUICC
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp_whitelist_im.angry.openeuicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp_whitelist_im.angry.openeuicc.xml
+
+# Declare the eUICC features so EuiccManager exists and the EuiccGoogle LPA can
+# start (TelephonyFrameworkInitializer gates EUICC_SERVICE on this). The LPA
+# then reports "Cannot find Euicc on device" because no slot is exposed as an
+# eUICC -- a graceful error rather than a reboot.
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.mep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.euicc.mep.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-euiccgoogle.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-euiccgoogle.xml
 
-# eUICC features. These MUST be declared together with the EuiccGoogle LPA blob
-# (see proprietary-files.txt): TelephonyFrameworkInitializer only registers
-# EuiccManager when FEATURE_TELEPHONY_EUICC is present, so without this the LPA
-# NPEs on getSystemService(EuiccManager) and crash-loops at boot. Declaring it
-# *without* an LPA is equally broken -- Settings then offers eSIM with nothing
-# behind it and takes down system_server.
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.mep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.euicc.mep.xml
 
 # Properties
 PRODUCT_COPY_FILES += \
