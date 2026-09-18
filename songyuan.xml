@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="alexzorzi" fetch="https://github.com/AlexZorzi" />
+  <remote name="estkme" fetch="https://github.com/estkme-group" />
+  <remote name="davegamble" fetch="https://github.com/DaveGamble" />
+
+  <!-- Device -->
+  <project name="android_device_xiaomi_songyuan"
+           path="device/xiaomi/songyuan"
+           remote="alexzorzi"
+           revision="refs/heads/songyuan" />
+  <project name="android_device_xiaomi_sm8850-common"
+           path="device/xiaomi/sm8850-common"
+           remote="alexzorzi"
+           revision="refs/heads/lineage-24.0" />
+  <project name="android_device_xiaomi_songyuan-kernel"
+           path="device/xiaomi/songyuan-kernel"
+           remote="alexzorzi"
+           revision="refs/heads/master" />
+
+  <!-- Fork of LineageOS/android_hardware_xiaomi. songyuan-support carries the
+       Euicc device mapping and the EsimSwitcher setSimSlotMapping change;
+       upstream lineage-24.0 has neither, and syncing to it breaks eSIM. -->
+  <project name="android_hardware_xiaomi"
+           path="hardware/xiaomi"
+           remote="alexzorzi"
+           revision="refs/heads/songyuan-support" />
+
+  <!-- OpenEUICC, built from source. Pinned: master moves and this is the
+       revision the ROM is verified against. The two submodules are listed
+       explicitly because sync-s does not fetch them. -->
+  <project name="openeuicc"
+           path="packages/apps/OpenEUICC"
+           remote="estkme"
+           revision="28aad5790418585059ebdad8b4b0fdbab56dcaa7" />
+  <project name="lpac"
+           path="packages/apps/OpenEUICC/libs/lpac-jni/src/main/jni/lpac"
+           remote="estkme"
+           revision="50cdf15ab40942b00f8819a1c2ca19997f1a6d34" />
+  <project name="cJSON"
+           path="packages/apps/OpenEUICC/libs/lpac-jni/src/main/jni/cjson/cjson"
+           remote="davegamble"
+           revision="6d9f2443ab071f86e5d9b43025a40929ec41c46c" />
+</manifest>

@@ -18,3 +18,38 @@
 |                         | 50 MP, f/2.4, 17mm, 102˚ (ultrawide), 1/2.88", 0.61µm                      |
 | Front Camera            | 32 MP, f/2.2, 21mm (wide), 1/3.44", 0.64µm                                 |
 | Release Date            | September 2026                                                             |
+
+## Building
+
+`lineage.dependencies` can't express this tree: roomservice hardcodes the
+`LineageOS/` org for every project and only honours a custom `remote` when it
+starts with `aosp-`. The forks below are therefore shipped as a local manifest
+instead.
+
+```bash
+repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+mkdir -p .repo/local_manifests
+curl -o .repo/local_manifests/songyuan.xml \
+  https://raw.githubusercontent.com/AlexZorzi/android_device_xiaomi_songyuan/songyuan/songyuan.xml
+repo sync -c --no-clone-bundle --optimized-fetch --prune -j$(nproc)
+```
+
+`hardware/xiaomi` must stay on the fork's `songyuan-support` branch: it carries
+the Euicc device mapping and the EsimSwitcher `setSimSlotMapping` change, and
+syncing it to upstream `lineage-24.0` silently breaks eSIM.
+
+No kernel source is published for songyuan, so the prebuilt kernel headers have
+to be exported in the shell as well as in `BoardConfig.mk`:
+
+```bash
+export TARGET_PREBUILT_KERNEL_HEADERS=device/xiaomi/songyuan-kernel/kernel-headers.tar.gz
+```
+
+Then extract the blobs from a stock dump and build:
+
+```bash
+device/xiaomi/songyuan/extract-files.py <path to stock dump>
+source build/envsetup.sh
+lunch lineage_songyuan-cp2a-userdebug
+mka bacon
+```
