@@ -150,3 +150,80 @@ output is a constant regardless of input.
   readings look "stuck" when they are merely suspended.
 - Auto-brightness ships disabled (`screen_brightness_mode=0`). Enabling it does
   drive the backlight (11 -> 22 observed), so the framework side is fine.
+
+---
+
+# Round 4 -- root cause found
+
+## What the sensor actually does
+
+`android.sensor.light` (0x33) and the Xiaomi factory ALS (0x42f) both emit a
+hard constant **1.022 lux**. Sweeping the screen backlight 1 -> 255 swings the
+raw channels **25x** (ch0 280 -> 7093) and the reported lux does not move a
+single bit, and 0x33 stays silent throughout. That is a fallback constant, not
+a computation. (The 38.36 seen in round 3 was a stale cached on-change value,
+not a live reading.)
+
+The front ALS is **under the display**, so that 25x swing is panel light: ~96%
+of what the sensor sees is the screen, not the room.
+
+## How stock compensates
+
+`/odm/etc/sensors/config/lightSensorConfig.json` holds `Cct.panel_Info_cali_ori`
+-- a 23-row table indexed by panel DBV (0, 50, 200, ... 7800, matching
+`collectAls.setBrightness`), with independent r/g/b/w sets of 10 channel values
+each. Alongside it `cwbInfo` (Center "705,190", a radius list) identifies the
+screen region directly above the sensor: stock samples the displayed content
+there via **concurrent writeback**, weights the r/g/b/w tables by it, scales by
+the current DBV, and subtracts that from the raw channels before applying the
+lux transform.
+
+The transform itself is confirmed: `channel_coef` in that JSON is bit-identical
+to `lux_coef` in the sensor registry (threshold 0.7, then `alsTranma1` and
+`alsTranma3`). Applying it to live raw channels gives **46-51 lux**, plausible
+and tracking the channels -- so the maths is right and the inputs are there.
+
+## Everything static is already correct
+
+- `/odm/etc/sensors/config` is **byte-identical to stock** (`diff -rq`, clean).
+- The registry parsed every `glsx` group; `dark_cal` (-6..-18), `ch_fac_cal`
+  (~0.88), `als_delay`, `misc_info`, `sensor_reg_patch` all hold sane factory
+  values.
+- No SELinux denials anywhere near the sensor stack.
+- `panel-info-sh` ran and set `vendor.panel.*` correctly (vendor 23, display 12).
+
+So nothing we ship is wrong. The gap is **runtime**: nothing on our build feeds
+the DSP the live DBV and screen-content colour. On stock that comes from MIUI's
+display stack, plus the AON services `miaon_frame` / `misensor_camera`, which
+are both absent here -- `xiaomi.sensor.virtual_als_aon` (0x91b) yields no events
+at all. Starved of that feed the algorithm over-subtracts and clamps to its floor.
+
+This is **not patchable**: the algorithm lives in signed ADSP firmware and the
+feed is MIUI framework code.
+
+## New find: there is a second ALS chip
+
+`sip2326lr1n` ("SI IN"), rear-facing, with its own registry coefficients:
+
+| handle | type | notes |
+|--------|------|-------|
+| 0x60f / 0x610 | `xiaomi.sensor.back_lux` | on-change / wakeup |
+| 0x73b | `xiaomi.sensor.back_lux_strm` | streaming |
+| 0x623 / 0x62d | `xiaomi.sensor.back_cct*` | colour temperature |
+| 0x619 | `xiaomi.sensor.flicker` | reports 666.016 |
+| 0x821 | `xiaomi.sensor.dual_cct` | fuses front + back |
+
+It currently reads 0 lux -- but every test so far has been with the phone
+face-up on a desk, where a rear-facing sensor seeing darkness is the *correct*
+answer. **Untested with the back actually exposed to light.** If it works it is
+a panel-free ambient source and a far better input than the front sensor.
+
+## Where this leaves us
+
+1. **Test the rear ALS properly** (back pointed at a lamp). Cheap, decisive.
+2. **Userspace lux daemon.** Read front raw (0x83f), subtract panel emission
+   from `panel_Info_cali_ori` indexed by DBV, apply `channel_coef`, publish as
+   `android.sensor.light`. All inputs are available; the hard part is the
+   screen-content colour that stock gets from CWB -- approximating with the
+   white table will misread dark-mode vs white-page content.
+3. **Fuse both**, the way Xiaomi's own `dual_cct` does, if the rear works.
