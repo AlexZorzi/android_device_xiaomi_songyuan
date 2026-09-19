@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
         while ((got = ASensorEventQueue_getEvents(q, ev, 64)) > 0) {
             for (ssize_t i = 0; i < got; i++) {
                 printf("h=0x%-5x t=%-5d ", ev[i].sensor, ev[i].type);
-                for (int k = 0; k < 8; k++) printf("%10.3f ", ev[i].data[k]);
+                for (int k = 0; k < 16; k++) printf("%10.3f ", ev[i].data[k]);
                 printf("\n");
                 fflush(stdout);
             }
