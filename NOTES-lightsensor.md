@@ -91,6 +91,48 @@ SSC sensors that exist but are idle:
 `test-nusensors` from the stock dump segfaults on this platform -- to subscribe to
 custom sensor types you need a small NDK binary or an app.
 
+## Round 3 findings — with a real subscriber (tools/alstest)
+
+`cmd sensorservice` cannot subscribe and the stock `test-nusensors` segfaults, so
+`device/xiaomi/songyuan/tools/alstest` was written for this (NDK ASensorManager,
+subscribes by handle, prints all 8 event fields). Not in PRODUCT_PACKAGES;
+build with `m alstest`, push to /data/local/tmp.
+
+**The factory stream is the useful one.** 0x42f carries the computed lux AND the
+raw channels in one event:
+
+    h=0x42f  1.022  1.022  32.000  2000.000  271.984  151.579
+             ^lux^                           ^^^raw channels^^^
+
+Over 25s with the light changing, raw ch4 swept 143.667 -> 274.198 while the
+computed lux stayed at exactly **1.022** for every one of 168 events.
+
+    0x33  (front processed)  3 events at subscribe, then silence forever
+    0x42f (front factory)    168 events, lux constant, raw varying
+    0x60f (rear processed)   1 event, 0.000
+    0x73b (rear factory)     166 events, all fields 0.000
+    0x83f (front raw)        streams fine, ~260 varying
+
+So **both** processed outputs are broken, not just the front. The earlier theory
+that the front needed the rear as a reference is **disproved** — enabling the rear
+changes nothing, and the rear is equally dead.
+
+The DSP algorithm is running (it streams at the right rate, carries correct gain
+and integration-time fields, and passes the raw channels through) but its lux
+output is a constant regardless of input.
+
+## Realistic fix options
+
+1. **Compute lux in userspace.** We have everything needed: the raw channels
+   stream live on 0x83f/0x42f, and the coefficients are all readable --
+   `lux_coef` (alsTranma matrix, thresholds), `ch_fac_cal` (per-channel scales),
+   and `panel_Info_cali` (23-row RGBW panel emission table). A small service could
+   read raw, apply the transform, and publish android.sensor.light. Substantial
+   but tractable, and it sidesteps the signed DSP firmware entirely.
+2. Find the enable/mode that makes the DSP algorithm actually compute. Nothing
+   found so far; would need SSC logging.
+3. Ask whoever ships a working GLS6151 device.
+
 ## Next steps
 
 1. Get the rear ALS streaming (custom type 33171055) and see whether the front

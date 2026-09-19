@@ -1,0 +1,8 @@
+// Diagnostic tool, deliberately not in PRODUCT_PACKAGES. Build with: m alstest
+cc_binary {
+    name: "alstest",
+    srcs: ["alstest.cpp"],
+    shared_libs: ["libandroid", "liblog"],
+    cflags: ["-Wall", "-Werror"],
+    vendor: false,
+}
