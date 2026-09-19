@@ -56,6 +56,41 @@ per-refresh-rate sync delays in the config (als_sync_delay_30/60/90/120/144/165/
 A frozen output is exactly what you would expect if that live reference never
 arrives and the algorithm falls back to a constant.
 
+## Round 2 findings (same day, with adb root)
+
+**The DSP sensor itself is healthy.** `ssc_sensor_info` (pushed from the stock
+dump to /data/local/tmp) reports:
+
+    NAME = glsx   VENDOR = goodix   TYPE = ambient_light
+    AVAILABLE = true
+    RANGES = [0.000000, 65535.000000]      <- full lux range, not a stub
+    RESOLUTIONS = 0.100000
+    STREAM_TYPE = on_change
+
+**The 38.36 is a cached value, not a live one.** `android.sensor.light` is an
+on-change sensor, so sensorservice caches the last event and re-delivers it to
+every new subscriber. The "events" visible in dumpsys with advancing timestamps
+are re-deliveries, not new samples. Proof: sweeping the backlight 5 -> 120 -> 255
+and covering the sensor both leave the value at exactly 38.36.
+
+So the SSC `ambient_light` stream emits **nothing at all**, while
+`ambient_light_raw` streams fine at 50ms.
+
+Also checked and ruled out:
+- `odm/etc/sensors` 54/54 files identical to stock (incl. lightSensorConfig.json)
+- `vendor/etc/sensors` gaps are camera-AON configs for sensors this device does
+  not have (imx688/ov32c4c/s5kjn5) and sm8845 variants -- irrelevant
+- No userspace library references alsTranma/lux_coef/panel_Info_cali, confirming
+  the conversion is entirely DSP-side and cannot be patched
+- `vendor.qti.hardware.sensorscalibrate-service` is shipped and present; its rc is
+  `disabled`+`oneshot` (lazy HAL), so not running is by design
+
+SSC sensors that exist but are idle:
+    ambient_light_cal_strm, ambient_light_back, ambient_light_back_strm
+
+`test-nusensors` from the stock dump segfaults on this platform -- to subscribe to
+custom sensor types you need a small NDK binary or an app.
+
 ## Next steps
 
 1. Get the rear ALS streaming (custom type 33171055) and see whether the front
