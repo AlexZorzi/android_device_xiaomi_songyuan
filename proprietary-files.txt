@@ -1695,3 +1695,12 @@ vendor/lib64/liblegendmsg.so
 mi_ext/product/priv-app/EuiccGoogle/EuiccGoogle.apk:product/priv-app/EuiccGoogle/EuiccGoogle.apk
 mi_ext/product/priv-app/MIUIEsimLPA/MIUIEsimLPA.apk:product/priv-app/MIUIEsimLPA/MIUIEsimLPA.apk
 mi_ext/product/etc/permissions/privapp-permissions-miext.xml:product/etc/permissions/privapp-permissions-miext.xml
+
+# GNSS - the QTI AIDL GNSS HAL lives in odm on songyuan, not vendor. Without it
+# nothing registers android.hardware.gnss.IGnss/default and there is no GPS.
+odm/bin/hw/android.hardware.gnss-aidl-service-qti
+odm/etc/init/android.hardware.gnss-aidl-service-qti.rc
+odm/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
+odm/etc/vintf/manifest/vendor.qti.gnss-service.xml
+odm/lib64/vendor.qti.gnss-V8-ndk.so
+odm/lib64/vendor.qti.gnss-service.so
