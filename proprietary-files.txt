@@ -1425,6 +1425,9 @@ odm/firmware/smooth.tflite
 odm/firmware/film_model.tflite
 
 # Thermal config
+vendor/etc/thermal-engine.conf
+vendor/etc/thermal-map.conf
+vendor/etc/thermald-devices.conf
 odm/etc/thermal-4k.conf
 odm/etc/thermal-arvr.conf
 odm/etc/thermal-camera.conf
