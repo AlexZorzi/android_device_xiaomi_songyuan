@@ -1,0 +1,14 @@
+<!--
+    Copyright (C) 2026 Alex Zorzi <info@alexzorzi.it>
+    SPDX-License-Identifier: Apache-2.0
+
+    Context hub (CHRE) HAL, served by vendor/bin/hw/android.hardware.contexthub-service.qmi.
+    Matches the declaration stock songyuan merges into its odm manifest.
+-->
+<manifest version="9.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.contexthub</name>
+        <version>3</version>
+        <fqname>IContextHub/default</fqname>
+    </hal>
+</manifest>

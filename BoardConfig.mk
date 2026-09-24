@@ -16,6 +16,7 @@ include device/xiaomi/sm8850-common/BoardConfigCommon.mk
 # ISecureElement/eSE1, which manifest_canoe.xml already declares and
 # secure_element-service.qti already provides.
 ODM_MANIFEST_FILES := \
+    $(DEVICE_PATH)/configs/vintf/android.hardware.contexthub-service.qmi.xml \
     $(DEVICE_PATH)/configs/vintf/nfc-service-st.xml
 
 # Display

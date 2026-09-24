@@ -1704,3 +1704,6 @@ odm/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 odm/etc/vintf/manifest/vendor.qti.gnss-service.xml
 odm/lib64/vendor.qti.gnss-V8-ndk.so
 odm/lib64/vendor.qti.gnss-service.so
+
+# Context hub (CHRE) - the binary ships in vendor; stock starts it from odm.
+odm/etc/init/android.hardware.contexthub-service.qmi.rc
