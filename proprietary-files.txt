@@ -125,6 +125,10 @@ odm/lib64/bm6a81v08s14n95.bin
 odm/lib64/bm6a81v08s14n96.bin
 odm/lib64/bm6a81v08s14n97.bin
 odm/lib64/bm6a81v08s14n98.bin
+odm/lib64/bm6a81v08s14n99.bin
+odm/lib64/bm6a81v08s14n100.bin
+odm/lib64/bm6a81v08s14n101.bin
+odm/lib64/bm6a81v08s14n102.bin
 vendor/etc/hrtf5c.bin
 vendor/lib/rfsa/adsp/chre_qsh_shim.so
 vendor/lib/rfsa/adsp/libadsp_jpege_skel.so
@@ -877,6 +881,25 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.videofilter.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.watermark.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.yuv2Heic.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.yuvresize.so
+
+# Camera algorithms missing at bring-up (the video and 200MP graphs need them)
+odm/lib64/camera/dynamicplugins/com.xiaomi.plugin.depurple.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.deflicker2.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.ehdrdecompand.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.extendbuffer.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.facecolor.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.filmnoise.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.quality.so
+odm/lib64/camera/preloadplugins/com.xiaomi.plugin.offcamawbideal.so
+odm/lib64/camera/preloadplugins/com.xiaomi.plugin.offcamtintless.so
+odm/lib64/libFaceColor.so
+odm/lib64/libanc_face.so
+odm/lib64/libarcsoft_dualcam_bokeh_image.so
+odm/lib64/libarcsoft_fringe_remove.so
+odm/lib64/libarcsoft_pristine_resolution.so
+odm/lib64/libcc_fd.so
+odm/lib64/libmialgo_monopan.so
+odm/lib64/libmx_debanding.so
 
 # Camera Preload
 odm/lib64/camera/preloadplugins/com.xiaomi.plugin.asd.so
