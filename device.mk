@@ -62,6 +62,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     ApertureOverlaySongyuan \
     FrameworksResSongyuan \
+    NfcOverlaySongyuan \
     SongyuanEuiccOverlay \
     SettingsOverlaySongyuan \
     SystemUIResSongyuan
