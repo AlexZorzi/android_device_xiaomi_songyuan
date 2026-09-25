@@ -29,3 +29,5 @@ debug.sf.late.sf.duration.60=15666666
 debug.sf.late.sf.duration.90=13111111
 debug.sf.late.sf.duration.120=10333333
 debug.sf.late.sf.duration.144=10347222
+# Lights: the rear AW21024 LEDs are white
+ro.vendor.light.white_only=true

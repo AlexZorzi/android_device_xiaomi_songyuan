@@ -4,9 +4,9 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Rear AW21024 RGB LED, driven by android.hardware.light-service.sm8850:
-         RGB notification (1) + RGB battery (2) + pulsating (8)
-         + HAL notification brightness (32) + battery LED (64)
-         + HAL battery brightness (128) = 235 -->
-    <integer name="config_deviceLightCapabilities">235</integer>
+    <!-- Rear AW21024 LED, driven by android.hardware.light-service.sm8850.
+         The LEDs are white (stock HyperOS offers white only), so no RGB bits:
+         pulsating (8) + HAL notification brightness (32) + battery LED (64)
+         + HAL battery brightness (128) = 232 -->
+    <integer name="config_deviceLightCapabilities">232</integer>
 </resources>
