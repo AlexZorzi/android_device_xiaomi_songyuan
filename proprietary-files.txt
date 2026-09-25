@@ -807,6 +807,7 @@ odm/lib64/libsupermoon.so
 odm/lib64/libvega_common.so
 odm/lib64/libwa_opticalzoom_fusion.so
 odm/lib64/libwa_widelens_undistort.so
+odm/lib64/libxmi_slow_motion_mein.so
 odm/lib64/outconvfiltcoeff.bin
 odm/lib64/outconvfiltcoeffcq2x2.bin
 odm/lib64/outconvfiltcoeffcq4x4.bin
