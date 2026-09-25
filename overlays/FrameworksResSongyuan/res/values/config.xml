@@ -473,4 +473,7 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
+    <!-- Rear AW21024 LED: allow notification and battery lights -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
+
 </resources>

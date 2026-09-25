@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Rear AW21024 RGB LED, driven by android.hardware.light-service.sm8850:
+         RGB notification (1) + RGB battery (2) + pulsating (8)
+         + HAL notification brightness (32) + battery LED (64)
+         + HAL battery brightness (128) = 235 -->
+    <integer name="config_deviceLightCapabilities">235</integer>
+</resources>

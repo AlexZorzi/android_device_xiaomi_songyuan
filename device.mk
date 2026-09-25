@@ -67,10 +67,15 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Lights (rear AW21024 LED)
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.sm8850
+
 # Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlaySongyuan \
     FrameworksResSongyuan \
+    LineageSDKResSongyuan \
     NfcOverlaySongyuan \
     SongyuanEuiccOverlay \
     SettingsOverlaySongyuan \
