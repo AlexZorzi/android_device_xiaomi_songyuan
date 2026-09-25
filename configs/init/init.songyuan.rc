@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+on property:sys.boot_completed=1
+    # Fast wired reverse charging. Stock toggles this through micharge, which
+    # we don't ship. The driver still gates it: PD sink auth, battery >= 60 %
+    # (revchg_soc_thr) and a temperature window; up to 27 W (support_revchg_27w).
+    write /sys/class/xm_power/charger/charger_common/reverse_quick_charge 1

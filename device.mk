@@ -67,6 +67,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/init.songyuan.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.songyuan.rc
+
 # Lights (rear AW21024 LED)
 PRODUCT_PACKAGES += \
     android.hardware.light-service.sm8850
