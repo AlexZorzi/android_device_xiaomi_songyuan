@@ -1184,6 +1184,8 @@ vendor/lib64/libcamxcslhw.so
 vendor/lib64/libcamxdumpinforecorder.so
 vendor/lib64/libcamxexternalformatutils.so
 vendor/lib64/libcamxfdengine.so
+vendor/lib64/libqfdadapter.so
+vendor/lib64/libqfdservice.so
 vendor/lib64/libcamxhexlpservicebase.so
 vendor/lib64/libcamxhwlfrontend.so
 vendor/lib64/libcamxhwlipedriver.so
