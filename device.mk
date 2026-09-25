@@ -5,6 +5,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Audio (above the common inherit: the first PRODUCT_COPY_FILES entry for a
+# destination wins, and common installs the AOSP volume tables)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+
 # Inherit from sm8650-common
 $(call inherit-product, device/xiaomi/sm8850-common/common.mk)
 

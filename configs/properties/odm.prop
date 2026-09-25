@@ -27,3 +27,8 @@ persist.vendor.sys.fp.fod.us.target=517,1939,683,2121
 
 # SKU
 import /odm/etc/odm_${ro.boot.hwc}.prop
+
+# Audio: 30 media steps (common sets 15, stock uses 150) so the quietest
+# speaker step is actually quiet; see configs/audio/default_volume_tables.xml.
+ro.config.media_vol_steps=30
+ro.config.media_vol_default=20
