@@ -1,6 +1,6 @@
-## TODO: carried over from myron (Redmi K90 Pro Max). Verify against a
-## songyuan firmware dump — the partition set may differ.
+## Firmware from POCO F9 Ultra (songyuan_eea_global OS3.0.308.0.WGNEUXM).
 
+# Firmware
 abl.img;AB
 aop_config.img;AB
 aop.img;AB
