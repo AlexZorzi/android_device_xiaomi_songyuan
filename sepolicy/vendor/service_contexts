@@ -1,1 +1,2 @@
 vendor.novatek.hardware.visdisplaysrv.IVisdisplaysrv/default    u:object_r:hal_visdisplaysrv_service:s0
+vendor.xiaomi.hardware.framecapturemanager.IFrameCaptureManager/default u:object_r:vendor_hal_framecapturemanager_xiaomi_service:s0

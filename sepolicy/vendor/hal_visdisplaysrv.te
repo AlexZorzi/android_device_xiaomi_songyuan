@@ -25,3 +25,8 @@ allow hal_visdisplaysrv_default self:netlink_generic_socket { create bind read w
 hal_client_domain(vendor_hal_displayfeature_xiaomi_default, hal_visdisplaysrv)
 hal_client_domain(hal_graphics_composer_default, hal_visdisplaysrv)
 allow hal_graphics_composer_default nvt_device:chr_file rw_file_perms;
+
+# FrameMaster and FrameCaptureManager live in the displayfeature HAL
+allow hal_visdisplaysrv_default vendor_hal_framemaster_xiaomi_service:service_manager find;
+allow hal_visdisplaysrv_default vendor_hal_framecapturemanager_xiaomi_service:service_manager find;
+binder_call(hal_visdisplaysrv_default, vendor_hal_displayfeature_xiaomi_default)

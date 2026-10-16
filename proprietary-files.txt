@@ -1787,3 +1787,13 @@ mi_ext/product/data-app/XMRemoteController/XMRemoteController.apk:product/app/XM
 odm/bin/hw/vendor.novatek.hardware.visdisplaysrv-service
 odm/etc/init/vendor.novatek.hardware.visdisplaysrv-service.rc
 odm/etc/vintf/manifest/vendor.novatek.hardware.visdisplaysrv.xml
+odm/etc/dqe/ASICPCC.xml
+odm/etc/dqe/ASICPanel.xml
+odm/etc/dqe/ASICScene.xml
+odm/etc/dqe/ICSelfCheckItem.xml
+odm/etc/dqe/NvtFactoryTest.xml
+odm/etc/dqe/parameter_config.ini
+odm/etc/dqe/video_parameter_config.ini
+odm/etc/dqe/whitelist_app.json
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.framecapturemanager_aidl-service.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.framemaster_aidl-service.xml

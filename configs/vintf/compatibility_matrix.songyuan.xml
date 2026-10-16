@@ -6,4 +6,18 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.framemaster</name>
+        <interface>
+            <name>IFrameMaster</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.framecapturemanager</name>
+        <interface>
+            <name>IFrameCaptureManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

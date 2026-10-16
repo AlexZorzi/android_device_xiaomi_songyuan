@@ -1,0 +1,4 @@
+type vendor_hal_framecapturemanager_xiaomi_service, hal_service_type, service_manager_type;
+
+allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framecapturemanager_xiaomi_service:service_manager { add find };
+binder_call(vendor_hal_displayfeature_xiaomi_default, hal_visdisplaysrv_default)

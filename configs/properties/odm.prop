@@ -32,3 +32,10 @@ import /odm/etc/odm_${ro.boot.hwc}.prop
 # speaker step is actually quiet; see configs/audio/default_volume_tables.xml.
 ro.config.media_vol_steps=30
 ro.config.media_vol_default=20
+
+# Novatek display chip (frame insertion)
+ro.vendor.display.dualDPU.support=nt72336
+ro.vendor.display.dualDPU_EMVSize=1200,2608
+ro.vendor.display.frame_capture_manager.enable=true
+ro.vendor.display.framemaster.enable=true
+ro.vendor.display.hyperos.miDualDPU_support=true
