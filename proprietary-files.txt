@@ -1782,3 +1782,8 @@ vendor/lib64/vendor.xiaomi.sensor.aonframe-V1-ndk.so
 # Mi Remote (stock data-app). Its JNI libs are compressed, so extract-files.py
 # unpacks them next to the APK; a bundled system app never extracts them.
 mi_ext/product/data-app/XMRemoteController/XMRemoteController.apk:product/app/XMRemoteController/XMRemoteController.apk;PRESIGNED;SKIPAPKCHECKS
+
+# Novatek display chip (NT72335/6): frame insertion and PQ
+odm/bin/hw/vendor.novatek.hardware.visdisplaysrv-service
+odm/etc/init/vendor.novatek.hardware.visdisplaysrv-service.rc
+odm/etc/vintf/manifest/vendor.novatek.hardware.visdisplaysrv.xml

@@ -1,0 +1,2 @@
+/dev/vis_display_spidev                                             u:object_r:nvt_device:s0
+/(vendor|odm)/bin/hw/vendor\.novatek\.hardware\.visdisplaysrv-service u:object_r:hal_visdisplaysrv_default_exec:s0

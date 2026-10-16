@@ -1,0 +1,27 @@
+type hal_visdisplaysrv_default, domain;
+type hal_visdisplaysrv_default_exec, exec_type, file_type, vendor_file_type;
+type hal_visdisplaysrv_service, hal_service_type, service_manager_type;
+type nvt_device, dev_type;
+
+hal_attribute(visdisplaysrv)
+
+init_daemon_domain(hal_visdisplaysrv_default)
+hal_server_domain(hal_visdisplaysrv_default, hal_visdisplaysrv)
+add_service(hal_visdisplaysrv_server, hal_visdisplaysrv_service)
+binder_call(hal_visdisplaysrv_client, hal_visdisplaysrv_server)
+binder_call(hal_visdisplaysrv_server, hal_visdisplaysrv_client)
+allow hal_visdisplaysrv_client hal_visdisplaysrv_service:service_manager find;
+
+vndbinder_use(hal_visdisplaysrv_default)
+hal_client_domain(hal_visdisplaysrv_default, hal_graphics_allocator)
+binder_call(hal_visdisplaysrv_default, hal_graphics_composer)
+
+allow hal_visdisplaysrv_default nvt_device:chr_file rw_file_perms;
+allow hal_visdisplaysrv_default input_device:dir r_dir_perms;
+allow hal_visdisplaysrv_default input_device:chr_file rw_file_perms;
+allow hal_visdisplaysrv_default self:netlink_socket { create bind read write };
+allow hal_visdisplaysrv_default self:netlink_generic_socket { create bind read write };
+
+hal_client_domain(vendor_hal_displayfeature_xiaomi_default, hal_visdisplaysrv)
+hal_client_domain(hal_graphics_composer_default, hal_visdisplaysrv)
+allow hal_graphics_composer_default nvt_device:chr_file rw_file_perms;
