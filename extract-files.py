@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import zipfile
+
 import extract_utils.tools
 from extract_utils.fixups_blob import (
     BlobFixupCtx,
@@ -75,6 +78,23 @@ def blob_fixup_miface_weak_nonsecure(
                 content[o:o + 4] = new
             f.seek(0)
             f.write(content)
+
+def blob_fixup_unpack_jni_libs(
+    ctx: BlobFixupCtx,
+    file: File,
+    file_path: str,
+    *args,
+    **kwargs,
+):
+    # Presigned and compressed: unpack the arm64 libs to lib/arm64/ beside it
+    lib_dir = os.path.join(os.path.dirname(file_path), 'lib', 'arm64')
+    os.makedirs(lib_dir, exist_ok=True)
+    with zipfile.ZipFile(file_path) as apk:
+        for name in apk.namelist():
+            if name.startswith('lib/arm64-v8a/') and name.endswith('.so'):
+                with open(os.path.join(lib_dir, os.path.basename(name)), 'wb') as f:
+                    f.write(apk.read(name))
+
 
 blob_fixups: blob_fixups_user_type = {
     (
@@ -183,6 +203,8 @@ blob_fixups: blob_fixups_user_type = {
         .call(blob_fixup_gme_ois_read),
     'odm/lib64/libmiface.so': blob_fixup()
         .call(blob_fixup_miface_weak_nonsecure),
+    'product/app/XMRemoteController/XMRemoteController.apk': blob_fixup()
+        .call(blob_fixup_unpack_jni_libs),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

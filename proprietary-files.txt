@@ -1778,3 +1778,7 @@ odm/mitee/ta/66147267-5b44-4aa3-bd734138c7fab03a.ta
 odm/mitee/ta/a13339be-7082-4d2d-bf83a53e4687a635.ta
 odm/mitee/ta/a3ba6512-6e0e-4065-93165e4a7d04ca08.ta
 vendor/lib64/vendor.xiaomi.sensor.aonframe-V1-ndk.so
+
+# Mi Remote (stock data-app). Its JNI libs are compressed, so extract-files.py
+# unpacks them next to the APK; a bundled system app never extracts them.
+mi_ext/product/data-app/XMRemoteController/XMRemoteController.apk:product/app/XMRemoteController/XMRemoteController.apk;PRESIGNED;SKIPAPKCHECKS
