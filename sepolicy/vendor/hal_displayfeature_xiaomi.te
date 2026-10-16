@@ -2,3 +2,7 @@ type vendor_hal_framecapturemanager_xiaomi_service, hal_service_type, service_ma
 
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framecapturemanager_xiaomi_service:service_manager { add find };
 binder_call(vendor_hal_displayfeature_xiaomi_default, hal_visdisplaysrv_default)
+
+# The composer drives dual DPU mode through FrameMaster
+allow hal_graphics_composer_default vendor_hal_framemaster_xiaomi_service:service_manager find;
+binder_call(hal_graphics_composer_default, vendor_hal_displayfeature_xiaomi_default)
