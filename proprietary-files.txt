@@ -1795,5 +1795,8 @@ odm/etc/dqe/NvtFactoryTest.xml
 odm/etc/dqe/parameter_config.ini
 odm/etc/dqe/video_parameter_config.ini
 odm/etc/dqe/whitelist_app.json
+odm/firmware/asic_panel.bin
+odm/firmware/asic_pcc.bin
+odm/firmware/paneldata_0x00000032.bin
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.framecapturemanager_aidl-service.xml
 odm/etc/vintf/manifest/vendor.xiaomi.hardware.framemaster_aidl-service.xml
