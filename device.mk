@@ -91,6 +91,10 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.face-V4-ndk.vendor \
     SongyuanFaceEnroll
 
+# Rear LED music light
+PRODUCT_PACKAGES += \
+    SongyuanMusicLight
+
 # Mi Remote (JNI libs unpacked from the presigned APK by extract-files.py)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.so,vendor/xiaomi/songyuan/proprietary/product/app/XMRemoteController/lib/arm64,$(TARGET_COPY_OUT_PRODUCT)/app/XMRemoteController/lib/arm64)

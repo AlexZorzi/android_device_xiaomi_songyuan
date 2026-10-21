@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Music light</string>
+    <string name="music_light_title">Music light</string>
+    <string name="music_light_enabled_title">Pulse the rear light with music</string>
+    <string name="music_light_enabled_summary">The rear light follows the music while media plays</string>
+</resources>

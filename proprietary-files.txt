@@ -22,6 +22,7 @@ odm/etc/acdbdata/Mi/model924_eai_int8_8850.eai
 odm/etc/acdbdata/Mi/model9414_eai_int8_8850.eai
 
 # ADSP modules
+odm/etc/audio/mis_audioled_configs.bin
 odm/etc/audio/mis_gameop_configs.bin
 odm/etc/audio/mis_head_spatial.bin
 odm/etc/audio/mis_head.bin

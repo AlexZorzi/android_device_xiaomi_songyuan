@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/music_light_title">
+
+    <SwitchPreferenceCompat
+        android:key="music_light_enabled"
+        android:title="@string/music_light_enabled_title"
+        android:summary="@string/music_light_enabled_summary"
+        android:persistent="false" />
+
+</PreferenceScreen>
