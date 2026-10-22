@@ -13,4 +13,14 @@
         android:summary="@string/music_light_enabled_summary"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="music_light_apps_mode"
+        android:title="@string/music_light_apps_mode_title"
+        android:summary="%s"
+        android:persistent="false" />
+
+    <PreferenceCategory
+        android:key="music_light_apps"
+        android:title="@string/music_light_apps_title" />
+
 </PreferenceScreen>

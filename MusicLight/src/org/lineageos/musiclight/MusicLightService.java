@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 /*
@@ -89,10 +90,11 @@ public class MusicLightService extends Service {
     }
 
     private void update(List<AudioPlaybackConfiguration> configs) {
+        boolean selectedOnly = MusicLight.isSelectedOnly(this);
+        Set<String> apps = MusicLight.getApps(this);
         int session = AudioManager.AUDIO_SESSION_ID_GENERATE;
         for (AudioPlaybackConfiguration config : configs) {
-            if (config.isActive()
-                    && config.getAudioAttributes().getUsage() == AudioAttributes.USAGE_MEDIA) {
+            if (config.isActive() && isWanted(config, selectedOnly, apps)) {
                 session = config.getSessionId();
                 break;
             }
@@ -108,6 +110,33 @@ public class MusicLightService extends Service {
             }
             attach(session);
         }
+    }
+
+    /*
+     * Any media playback, or with an app selection, any playback of the
+     * selected apps that isn't a call or a system sound (so WhatsApp voice
+     * messages count).
+     */
+    private boolean isWanted(AudioPlaybackConfiguration config, boolean selectedOnly,
+            Set<String> apps) {
+        int usage = config.getAudioAttributes().getUsage();
+        if (!selectedOnly) {
+            return usage == AudioAttributes.USAGE_MEDIA;
+        }
+        if (usage != AudioAttributes.USAGE_MEDIA && usage != AudioAttributes.USAGE_GAME
+                && usage != AudioAttributes.USAGE_UNKNOWN) {
+            return false;
+        }
+        String[] packages = getPackageManager().getPackagesForUid(config.getClientUid());
+        if (packages == null) {
+            return false;
+        }
+        for (String pkg : packages) {
+            if (apps.contains(pkg)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void start(int session) {

@@ -8,4 +8,8 @@
     <string name="music_light_title">Music light</string>
     <string name="music_light_enabled_title">Pulse the rear light with music</string>
     <string name="music_light_enabled_summary">The rear light follows the music while media plays</string>
+    <string name="music_light_apps_mode_title">Light up for</string>
+    <string name="music_light_apps_mode_all">All media</string>
+    <string name="music_light_apps_mode_selected">Selected apps</string>
+    <string name="music_light_apps_title">Apps</string>
 </resources>

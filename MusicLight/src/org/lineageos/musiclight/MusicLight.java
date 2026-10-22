@@ -9,10 +9,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import java.util.Collections;
+import java.util.Set;
+
 final class MusicLight {
     private static final String PREFS = "state";
     private static final String KEY_ENABLED = "enabled";
     private static final String KEY_LIT = "lit";
+    private static final String KEY_SELECTED_ONLY = "selected_only";
+    private static final String KEY_APPS = "apps";
 
     private MusicLight() {}
 
@@ -23,6 +28,27 @@ final class MusicLight {
 
     static boolean isEnabled(Context context) {
         return prefs(context).getBoolean(KEY_ENABLED, false);
+    }
+
+    /* Only light up for the apps picked in settings instead of any media */
+    static boolean isSelectedOnly(Context context) {
+        return prefs(context).getBoolean(KEY_SELECTED_ONLY, false);
+    }
+
+    static Set<String> getApps(Context context) {
+        return prefs(context).getStringSet(KEY_APPS, Collections.emptySet());
+    }
+
+    static void setFilter(Context context, boolean selectedOnly, Set<String> apps) {
+        prefs(context).edit()
+                .putBoolean(KEY_SELECTED_ONLY, selectedOnly)
+                .putStringSet(KEY_APPS, apps)
+                .apply();
+        // Restart so the running service picks up the new filter
+        if (isEnabled(context)) {
+            context.stopService(new Intent(context, MusicLightService.class));
+            apply(context);
+        }
     }
 
     static void setEnabled(Context context, boolean enabled) {
