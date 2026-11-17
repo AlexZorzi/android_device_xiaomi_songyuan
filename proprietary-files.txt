@@ -170,6 +170,8 @@ vendor/lib64/rfs/dsp/libscveT2T_skel.so
 vendor/lib64/rfs/dsp/libsvDescMatch_dsp.so
 vendor/lib64/rfs/dsp/libsvDescMatchImpl_dsp_skel.so
 vendor/lib64/rfs/dsp/libsvdsp.so
+vendor/lib64/rfs/dsp/libsvswdsp.so
+vendor/lib64/rfs/dsp/libsvswdsp_skel.so
 vendor/lib64/rfs/dsp/libvpp_frc.so
 vendor/lib64/rfs/dsp/libvpp_gfrc_networks.so
 vendor/lib64/rfs/dsp/libvpp_svc_skel.so 
